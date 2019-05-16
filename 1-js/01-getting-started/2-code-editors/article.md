@@ -1,6 +1,6 @@
 # Editors de codi
 
-Un editor de codi és on els programadors passen la major part del temps.
+L'editor de codi és on els programadors passen la major part del temps.
 
 Existeixen dos tipus principals d'editors de codi: IDEs i editors lleugers. La majoria de la gent fa servir una eina de cada tipus.
 
