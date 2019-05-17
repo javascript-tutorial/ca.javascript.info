@@ -1,64 +1,64 @@
-# Developer console
+# La consola de desenvolupador
 
-Code is prone to errors. You will quite likely make errors... Oh, what am I talking about? You are *absolutely* going to make errors, at least if you're a human, not a [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
+El codi és propens a contenir errors. Segurament cometreu errors... perdó, *i tant* que cometreu errors, almenys si sou humà i no un [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
 
-But in the browser, users don't see errors by default. So, if something goes wrong in the script, we won't see what's broken and can't fix it.
+Al navegador, però, per defecte els usuaris no veuen errors. Per tant, si alguna cosa falla, no podrem veure què està trencat i no ho podrem arreglar.
 
-To see errors and get a lot of other useful information about scripts, "developer tools" have been embedded in browsers.
+Per veure errors i obtenir molta més informació útil sobre els scripts, s'han incorporat les "eines de desenvolupador" als navegadors.
 
-Most developers lean towards Chrome or Firefox for development because those browsers have the best developer tools. Other browsers also provide developer tools, sometimes with special features, but are usually playing "catch-up" to Chrome or Firefox. So most developers have a "favorite" browser and switch to others if a problem is browser-specific.
+La majoria de desenvolupadors tendeixen a fer servir Chrome o Firefox per desenvolupar perquè aquests navegadors tenen les millors eines de desenvolupador. Altres navegadors també proporcionen eines de desenvolupador, a vegades amb funcions especials, però acostumen a anar a rebuf de Chrome/Firefox. Així, la majoria dels desenvolupadors tenen un navegador "preferit" i canvien a un altre si el problema és específic d'un navegador concret.
 
-Developer tools are potent; they have many features. To start, we'll learn how to open them, look at errors, and run JavaScript commands.
+Les eines de desenvolupador són potents; tenen diverses característiques. Per començar, aprendrem com obrir-les, veure errors, i executar comandes de JavaScript.
 
 ## Google Chrome
 
-Open the page [bug.html](bug.html).
+Obriu la pàgina [bug.html](bug.html).
 
-There's an error in the JavaScript code on it. It's hidden from a regular visitor's eyes, so let's open developer tools to see it.
+Hi ha un error al codi JavaScript de la pàgina. Es troba amagat als ulls d'un visitant comú, així que obrirem les eines de desenvolupador per veure'l.
 
-Press `key:F12` or, if you're on Mac, then `key:Cmd+Opt+J`.
+Premeu `key:F12` o, si feu servir Mac, llavors `key:Cmd+Opt+J`.
 
-The developer tools will open on the Console tab by default.
+Les eines de desenvolupador s'obriran amb la pestanya de Consola per defecte.
 
 It looks somewhat like this:
 
 ![chrome](chrome.png)
 
-The exact look of developer tools depends on your version of Chrome. It changes from time to time but should be similar.
+L'aparença exacta de les eines de desenvolupador depenen de la vostra versió del Chrome. Canvia de tant en tant però hauria de ser similar.
 
-- Here we can see the red-colored error message. In this case, the script contains an unknown "lalala" command.
-- On the right, there is a clickable link to the source `bug.html:12` with the line number where the error has occurred.
+- Aquí podem veure el missatge d'error, ressaltat en vermell. En aquest cas, l'script conté una comanda desconeguda "lalala".
+- A la dreta, hi ha un enllaç clicable al codi font `bug.html:12` amb el número de línia on ha ocorregut l'error.
 
-Below the error message, there is a blue `>` symbol. It marks a "command line" where we can type JavaScript commands. Press `key:Enter` to run them (`key:Shift+Enter` to input multi-line commands).
+Sota el missatge d'error, hi ha un símbol blau `>`. Marca la "línia de comandes" on podem escriure comandes JavaScript. Premeu `key:Enter` per executar-les (`key:Shift+Enter` per escriure comandes multilínia).
 
-Now we can see errors, and that's enough for a start. We'll come back to developer tools later and cover debugging more in-depth in the chapter <info:debugging-chrome>.
+Ara podem veure els errors, i això és suficient per començar. Revisitarem les eines de desenvolupador més endavant i estudiarem la depuració de codi més en profunditat al capítol <info:debugging-chrome>.
 
 
-## Firefox, Edge, and others
+## Firefox, Edge, i altres
 
-Most other browsers use `key:F12` to open developer tools.
+La majoria de navegadors fa servir la tecla `key:F12` per obrir les eines de desenvolupador.
 
-The look & feel of them is quite similar. Once you know how to use one of these tools (you can start with Chrome), you can easily switch to another.
+L'aparença de les eines és força similar. Un cop s'aprèn a utilitzar-ne una (podeu començar amb Chrome), es pot saltar fàcilment a una altra.
 
 ## Safari
 
-Safari (Mac browser, not supported by Windows/Linux) is a little bit special here. We need to enable the "Develop menu" first.
+Safari (navegador de Mac, no suportat a Windows/Linux) és una mica especial. Primer s'ha d'activar el "Menú de desenvolupador".
 
-Open Preferences and go to the "Advanced" pane. There's a checkbox at the bottom:
+Obriu Preferències i aneu al panell "Avançat". Hi ha una casella al final:
 
 ![safari](safari.png)
 
-Now `key:Cmd+Opt+C` can toggle the console. Also, note that the new top menu item named "Develop" has appeared. It has many commands and options.
+Ara `key:Cmd+Opt+C` pot mostrar i ocultar la consola. Noteu que ha aparegut un nou element al menú superior anomenat "Desenvolupador". Té diverses comandes i opcions.
 
-## Multi-line input
+## Entrada de més d'una línia
 
-Usually, when we put a line of code into the console, and then press `key:Enter`, it executes.
+Normalment, quan entrem una línia de codi a la consola, i premem `key:Enter`, s'executa.
 
-To insert multiple lines, press `key:Shift+Enter`.
+Per inserir més d'una línia, premeu `key:Shift+Enter`.
 
-## Summary
+## Resum
 
-- Developer tools allow us to see errors, run commands, examine variables, and much more.
-- They can be opened with `key:F12` for most browsers on Windows. Chrome for Mac needs `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (need to enable first).
+- Les eines de desenvolupador ens permeten veure errors, executar comandes, examinar les variables, i moltes més coses.
+- Es poden obrir amb la tecla `key:F12` a la majoria de navegadors amb Windows. Chrome per Mac necessita `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (primer s'ha d'activar).
 
-Now we have the environment ready. In the next section, we'll get down to JavaScript.
+Ara tenim l'entorn preparat. A la propera secció, ens endinsarem en JavaScript.
