@@ -1,8 +1,8 @@
-# Hello, world!
+# Hola, món!
 
-The tutorial that you're reading is about core JavaScript, which is platform-independent. Later on, you'll learn about Node.js and other platforms that use it.
+El tutorial que esteu llegint versa sobre el nucli de JavaScript, que és independent de la plataforma. Més endavant, aprendreu sobre Node.js i altres plataformes que l'empren.
 
-But we need a working environment to run our scripts and, since this book is online, the browser is a good choice. We'll keep the amount of browser-specific commands (like `alert`) to a minimum so that you don't spend time on them if you plan to concentrate on another environment (like Node.js). We'll focus on JavaScript in the browser in the [next part](/ui) of the tutorial.
+Però necessitem un entorn de treball per executar els scripts i, com aquest llibre és en línia, el navegador és una bona opció. Mantindrem la quantitat mínima de comandes específiques del navegador (com `alert`) perquè no pergueu temps si planegeu centrar-vos en un altre entorn (com Node.js). Ens centrarem en JavaScript al navegador en la [propera part](/ui) del tutorial.
 
 So first, let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
 
