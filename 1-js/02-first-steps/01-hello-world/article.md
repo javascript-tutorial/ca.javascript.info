@@ -4,14 +4,14 @@ El tutorial que esteu llegint versa sobre el nucli de JavaScript, que és indepe
 
 Però necessitem un entorn de treball per executar els scripts i, com aquest llibre és en línia, el navegador és una bona opció. Mantindrem la quantitat mínima de comandes específiques del navegador (com `alert`) perquè no pergueu temps si planegeu centrar-vos en un altre entorn (com Node.js). Ens centrarem en JavaScript al navegador en la [propera part](/ui) del tutorial.
 
-So first, let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
+Per començar, vegem com afegir un script a una pàgina web. Per entorns en servidor (com Node.js), podeu executar un script amb una comanda com `"node my.js"`.
 
 
-## The "script" tag
+## L'etiqueta "script"
 
-JavaScript programs can be inserted into any part of an HTML document with the help of the `<script>` tag.
+Els programes JavaScript poden inserir-se a qualsevol part d'un document HTML mitjançant l'etiqueta `<script>`.
 
-For instance:
+Per exemple:
 
 ```html run height=100
 <!DOCTYPE HTML>
@@ -19,15 +19,15 @@ For instance:
 
 <body>
 
-  <p>Before the script...</p>
+  <p>Abans del script...</p>
 
 *!*
   <script>
-    alert( 'Hello, world!' );
+    alert( 'Hola, món!' );
   </script>
 */!*
 
-  <p>...After the script.</p>
+  <p>...Després del script.</p>
 
 </body>
 
@@ -35,24 +35,24 @@ For instance:
 ```
 
 ```online
-You can run the example by clicking the "Play" button in the right-top corner of the box above.
+Podeu executar l'exemple fent clic al botó "Play" de la cantonada superior dreta del requadre superior.
 ```
 
-The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
+L'etiqueta `<script>` conté codi JavaScript que s'executa automàticament quan el navegador processa l'etiqueta.
 
 
-## Modern markup
+## Etiquetatge modern
 
-The `<script>` tag has a few attributes that are rarely used nowadays but can still be found in old code:
+L'etiquta `<script>` té alguns atributs poc emprats avui dia però que encara es poden trobar a codi antic:
 
-The `type` attribute: <code>&lt;script <u>type</u>=...&gt;</code>
-: The old HTML standard, HTML4, required a script to have a `type`. Usually it was `type="text/javascript"`. It's not required anymore. Also, the modern HTML standard, HTML5, totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic; we'll talk about modules in another part of the tutorial. 
+L'atribut `type`: <code>&lt;script <u>type</u>=...&gt;</code>
+: L'antic estàndard de HTML, HTML4, requeria que un script tingués un `type`. Normalment era `type="text/javascript"`. Ara ja no fa falta. També cal dir que HTML5, l'estàndard modern de HTML, canvià per complet el significat d'aquest atribut. Actualment, es pot emprar pels mòduls de JavaScript. Això, però, és un tema avançat; parlarem sobre mòduls en un altre apartat del tutorial.
 
-The `language` attribute: <code>&lt;script <u>language</u>=...&gt;</code>
-: This attribute was meant to show the language of the script. This attribute no longer makes sense because JavaScript is the default language. There is no need to use it.
+L'atribut `language`: <code>&lt;script <u>language</u>=...&gt;</code>
+: Aquest atribut pretenia mostrar el llenguatge del script; la seva existència ja no té sentit perquè JavaScript és el llenguatge per defecte. No hi ha necessitat de fer-lo servir.
 
-Comments before and after scripts.
-: In really ancient books and guides, you may find comments inside `<script>` tags, like this:
+Comentaris abans i després de scripts.
+: A llibres i guies molt antics, podeu trobar comentaris dins d'etiquetes `<script>`, com aquests:
 
     ```html no-beautify
     <script type="text/javascript"><!--
@@ -60,30 +60,30 @@ Comments before and after scripts.
     //--></script>
     ```
 
-    This trick isn't used in modern JavaScript. These comments hid JavaScript code from old browsers that didn't know how to process the `<script>` tag. Since browsers released in the last 15 years don't have this issue, this kind of comment can help you identify really old code.
+    Aquest truc no es fa servir en JavaScript modern. Aquests comentaris ocultaven codi JavaScript pels navegadors antics que no sabien com processar les etiquetes `<script>`. Com els navegadors dels últims 15 anys no tenen aquest problema, aquest tipus de comentari us pot ajudar a identificar codi ben antic.
 
 
-## External scripts
+## Scripts externs
 
-If we have a lot of JavaScript code, we can put it into a separate file.
+Si tenim molt de codi JavaScript, podem posar-lo a un fitxer separat.
 
-Script files are attached to HTML with the `src` attribute:
+Els fitxers de script s'inclouen a l'HTML amb l'atribut `src`:
 
 ```html
-<script src="/path/to/script.js"></script>
+<script src="/ruta/al/script.js"></script>
 ```
 
-Here, `/path/to/script.js` is an absolute path to the script file (from the site root).
+Aquí, `/ruta/al/script.js` és una ruta absoluta al fitxer script (des de l'arrel del lloc).
 
-You can also provide a relative path from the current page. For instance, `src="script.js"` would mean a file `"script.js"` in the current folder.
+També podeu proporcionar una ruta relativa des de la pàgina actual. Per il·lustrar, `src="script.js"` faria referència a un fitxer `"script.js"` en el directori actual.
 
-We can give a full URL as well. For instance:
+També podem introduir una URL sencera. Per exemple:
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 ```
 
-To attach several scripts, use multiple tags:
+Per incloure múltiples scripts, empreu múltiples etiquetes:
 
 ```html
 <script src="/js/script1.js"></script>
@@ -92,29 +92,29 @@ To attach several scripts, use multiple tags:
 ```
 
 ```smart
-As a rule, only the simplest scripts are put into HTML. More complex ones reside in separate files.
+Com a normal, només s'inclouen dins l'HTML els scripts més simples. Els més complexos romanen com a fitxers separats.
 
-The benefit of a separate file is that the browser will download it and store it in its [cache](https://en.wikipedia.org/wiki/Web_cache).
+L'avantatge d'un fitxer separat és que el navegador el descarregarà i el desarà a la seva memòria [cau](https://en.wikipedia.org/wiki/Web_cache).
 
-Other pages that reference the same script will take it from the cache instead of downloading it, so the file is actually downloaded only once.
+Altres pàgines que referencien el mateix script l'obtindran de la memòria cau en lloc de descarregar-lo, així que el fitxer realment només es descarrega un cop.
 
-That reduces traffic and makes pages faster.
+Això redueix el tràfic web i fa les pàgines més ràpides.
 ```
 
-````warn header="If `src` is set, the script content is ignored."
-A single `<script>` tag can't have both the `src` attribute and code inside.
+````warn header="Si `src` està definit, el contingut del script és ignorat."
+Una etiqueta `<script>` no pot tenir l'etiqueta `src` i contenir codi alhora.
 
-This won't work:
+Això no funcionarà:
 
 ```html
 <script *!*src*/!*="file.js">
-  alert(1); // the content is ignored, because src is set
+  alert(1); // el contingut s'ignora perquè src està definit
 </script>
 ```
 
-We must choose either an external `<script src="…">` or a regular `<script>` with code.
+Hem de triar o bé un `<script src="…">` extern o bé un `<script>` normal amb codi.
 
-The example above can be split into two scripts to work:
+L'exemple anterior es pot dividir en dos scripts perquè funcioni:
 
 ```html
 <script src="file.js"></script>
@@ -124,11 +124,11 @@ The example above can be split into two scripts to work:
 ```
 ````
 
-## Summary
+## Resum
 
-- We can use a `<script>` tag to add JavaScript code to a page.
-- The `type` and `language` attributes are not required.
-- A script in an external file can be inserted with `<script src="path/to/script.js"></script>`.
+- Podem emprar una etiqueta `<script>` per afegir codi JavaScript a una pàgina web.
+- Els atributs `type` i `language` no són necessaris.
+- Podem inserir un script d'un fitxer extern amb `<script src="ruta/al/script.js"></script>`.
 
 
-There is much more to learn about browser scripts and their interaction with the webpage. But let's keep in mind that this part of the tutorial is devoted to the JavaScript language, so we shouldn't distract ourselves with browser-specific implementations of it. We'll be using the browser as a way to run JavaScript, which is very convenient for online reading, but only one of many.
+Hi ha molts més per aprendre sobre scripts de navegador i llur interacció amb la pàgina web. Però cal tenir en ment que aquesta part del tutorial versa sobre el llenguatge JavaScript, així que no ens hauríem de distreure comentant implementacions específiques d'aquest per navegadors. Emprarem el navegador com una forma d'executar JavaScript, molt convenient per quan llegim en línia, però cal recordar que és només una opció entre d'altres.
