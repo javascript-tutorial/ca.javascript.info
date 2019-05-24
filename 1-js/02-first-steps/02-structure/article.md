@@ -1,29 +1,29 @@
-# Code structure
+# Estructura del codi
 
-The first thing we'll study is the building blocks of code.
+Els blocs que formen el codi són el primer que estudiarem.
 
-## Statements
+## Sentències
 
-Statements are syntax constructs and commands that perform actions.
+Les sentències són construccions sintàctiques i comandes que duen a terme accions.
 
-We've already seen a statement, `alert('Hello, world!')`, which shows the message "Hello, world!".
+Ja hem vist una sentència, `alert('Hola, món!')`, que mostra el missatge "Hola, món!".
 
-We can have as many statements in our code as we want. Statements can be separated with a semicolon.
+Al nostre codi podem tenir tantes sentències com vulguem. Les sentències es poden separar amb un punt i coma.
 
-For example, here we split "Hello World" into two alerts:
-
-```js run no-beautify
-alert('Hello'); alert('World');
-```
-
-Usually, statements are written on separate lines to make the code more readable:
+Per exemple, aquí separem "Hola món" en dues alertes:
 
 ```js run no-beautify
-alert('Hello');
-alert('World');
+alert('Hola'); alert('món');
 ```
 
-## Semicolons [#semicolon]
+Normalment, les sentències s'escriuen en línies separades per fer el codi més llegible.
+
+```js run no-beautify
+alert('Hola');
+alert('món');
+```
+
+## Punts i coma [#semicolon]
 
 A semicolon may be omitted in most cases when a line break exists.
 
