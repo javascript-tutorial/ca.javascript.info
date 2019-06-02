@@ -25,20 +25,20 @@ alert('món');
 
 ## Punts i coma [#semicolon]
 
-A semicolon may be omitted in most cases when a line break exists.
+Generalment, el punt i coma es pot ometre quan hi ha un salt de línia.
 
-This would also work:
+Això també funcionaria:
 
 ```js run no-beautify
-alert('Hello')
-alert('World')
+alert('Hola')
+alert('món')
 ```
 
-Here, JavaScript interprets the line break as an "implicit" semicolon. This is called an [automatic semicolon insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
+Aquí, JavaScript interpreta el salt de línia com a un punt i coma "implícit". Això s'anomena [inserció de punt i coma automàtica](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
 
-**In most cases, a newline implies a semicolon. But "in most cases" does not mean "always"!**
+**En la majoria dels casos, una nova línia implica un punt i coma. Però "en la majoria dels casos" no és "sempre"!**
 
-There are cases when a newline does not mean a semicolon. For example:
+Hi ha casos en què una nova línia no implica un punt i coma. Per exemple:
 
 ```js run no-beautify
 alert(3 +
@@ -46,114 +46,114 @@ alert(3 +
 + 2);
 ```
 
-The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so the semicolon is not required. And in this case that works as intended.
+El codi retorna `6` perquè JavaScript no insereix punts i coma aquí. És intuïtivament obvi que si la línia acaba amb un signe més `"+"`, llavors és una "expressió incompleta", així que el punt i coma no fa falta. I en aquest cas funciona com s'espera.
 
-**But there are situations where JavaScript "fails" to assume a semicolon where it is really needed.**
+**Però hi ha situacions on JavaScript "falla" a l'assumir un punt i coma on realment fa falta.**
 
-Errors which occur in such cases are quite hard to find and fix.
+Aquests tipus d'error són força difícils de trobar i solucionar.
 
-````smart header="An example of an error"
-If you're curious to see a concrete example of such an error, check this code out:
+````smart header="Exemple d'error"
+Si teniu curiositat per veure un exemple concret d'aquests errors, vegeu aquest codi:
 
 ```js run
 [1, 2].forEach(alert)
 ```
 
-No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of the code: it shows `1` then `2`.
+Ara mateix no importa què signifiquen els claudàtors `[]` i `forEach`. Els estudiarem més endavant. Per ara, només cal que recordeu el resultat del codi: mostra `1` i després `2`.
 
-Now, let's add an `alert` before the code and *not* finish it with a semicolon:
+Ara, afegim un `alert` abans del codi i *no* li posem un punt i coma final:
 
 ```js run no-beautify
-alert("There will be an error")
+alert("Hi haurà un error")
 
 [1, 2].forEach(alert)
 ```
 
-Now if we run the code, only the first `alert` is shown and then we have an error!
+Ara, si executem el codi, només el primer `alert` es mostra i llavors hi ha un error!
 
-But everything is fine again if we add a semicolon after `alert`:
+Però tot torna a funcionar si afegim un punt i coma després de l'`alert`:
 ```js run
-alert("All fine now");
+alert("Tot va bé");
 
 [1, 2].forEach(alert)  
 ```
 
-Now we have the "All fine now" message followed by `1` and `2`.
+Ara tenim el missatge de "Tot va bé" seguit d'un `1` i un `2`.
 
 
-The error in the no-semicolon variant occurs because JavaScript does not assume a semicolon before square brackets `[...]`.
+L'error a la versió sense punt i coma passa perquè JavaScript no assumeix cap punt i coma abans d'uns claudàtors `[...]`.
 
-So, because the semicolon is not auto-inserted, the code in the first example is treated as a single statement. Here's how the engine sees it:
+Llavors, com el punt i coma no s'insereix automàticament, el codi del primer exemple és tractat com una sola sentència. El motor ho veu així:
 
 ```js run no-beautify
-alert("There will be an error")[1, 2].forEach(alert)
+alert("Hi haurà un error")[1, 2].forEach(alert)
 ```
 
-But it should be two separate statements, not one. Such a merging in this case is just wrong, hence the error. This can happen in other situations.
+Però haurien de ser dues sentències separades, no una. Aquesta fusió, en aquest cas, és incorrecta, i d'aquí surt l'error. Això pot passar en altres situacions.
 ````
 
-We recommend putting semicolons between statements even if they are separated by newlines. This rule is widely adopted by the community. Let's note once again -- *it is possible* to leave out semicolons most of the time. But it's safer -- especially for a beginner -- to use them.
+Recomanem posar punts i coma entre sentències encara que estiguin separades per salts de línia. Aquesta norma té una gran adopció per part de la comunitat. Ho comentem un altre cop -- *és possible* obviar els punts i coma la majoria dels cops. Però és més segur -- sobretot per a principiants -- emprar-los.
 
-## Comments
+## Comentaris
 
-As time goes on, programs become more and more complex. It becomes necessary to add *comments* which describe what the code does and why.
+Conforme passa el temps, els programes esdevenen més i més complexos. Esdevé necessari afegir *comentaris* que descriuen què fa el codi i per què ho fa.
 
-Comments can be put into any place of a script. They don't affect its execution because the engine simply ignores them.
+Els comentaris es poden posar a qualsevol lloc d'un script. No afecten llur execució perquè el motor simplement els ignora.
 
-**One-line comments start with two forward slash characters `//`.**
+**Els comentaris d'una línia comencen amb dos barres `//`.**
 
-The rest of the line is a comment. It may occupy a full line of its own or follow a statement.
+La resta de la línia és un comentari. Pot ocupar una línia sencera o bé seguir una sentència.
 
-Like here:
+Com aquí:
 ```js run
-// This comment occupies a line of its own
-alert('Hello');
+// Aquest comentari ocupa una línia sencera ell sol
+alert('Hola');
 
-alert('World'); // This comment follows the statement
+alert('món'); // Aquest comentari segueix la sentència
 ```
 
-**Multiline comments start with a forward slash and an asterisk <code>/&#42;</code> and end with an asterisk and a forward slash <code>&#42;/</code>.**
+**Els comentaris multilínia van precedits d'una barra i un asterisc <code>/&#42;</code> i acaben amb un asteris i una barra <code>&#42;/</code>.**
 
-Like this:
+Com aquí:
 
 ```js run
-/* An example with two messages.
-This is a multiline comment.
+/* Un exemple amb dues línies.
+Això és un comentari multilínia.
 */
-alert('Hello');
-alert('World');
+alert('Hola');
+alert('món');
 ```
 
-The content of comments is ignored, so if we put code inside <code>/&#42; ... &#42;/</code>, it won't execute.
+El contingut dels comentaris s'ignora, així que si hi posem codi a dins <code>/&#42; ... &#42;/</code>, no s'executarà.
 
-Sometimes it can be handy to temporarily disable a part of code:
+A vegades és útil per desactivar temporalment una part del codi:
 
 ```js run
-/* Commenting out the code
-alert('Hello');
+/* Comentant el codi
+alert('Hola');
 */
-alert('World');
+alert('món');
 ```
 
-```smart header="Use hotkeys!"
-In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl`.
+```smart header="Empreu dreceres de teclat!"
+En la majoria dels editors, una línia de codi es pot comentar prement la drecera de teclat `key:Ctrl+/` per a un comentari d'una línia i alguna cosa similar a `key:Ctrl+Shift+/` -- per comentaris multilínia (seleccioneu un fragment de codi i premeu la drecera). Per Mac, proveu `key:Cmd` en lloc de `key:Ctrl`.
 ```
 
-````warn header="Nested comments are not supported!"
-There may not be `/*...*/` inside another `/*...*/`.
+````warn header="No es suporten comentaris aniuats!"
+No hi ha d'haver `/*...*/` dins d'un altre `/*...*/`.
 
-Such code will die with an error:
+Aquest codi patirà un error:
 
 ```js run no-beautify
 /*
-  /* nested comment ?!? */
+  /* comentari aniuat ?!? */
 */
-alert( 'World' );
+alert( 'Món' );
 ```
 ````
 
-Please, don't hesitate to comment your code.
+Per favor, no dubteu en comentar el vostre codi.
 
-Comments increase the overall code footprint, but that's not a problem at all. There are many tools which minify code before publishing to a production server. They remove comments, so they don't appear in the working scripts. Therefore, comments do not have negative effects on production at all.
+Els comentaris incrementen l'impacte total del codi, però això no suposa cap problema. Hi ha diverses eines que minimitzen el codi abans de publicar-lo a un servidor de producció. Eliminen els comentaris perquè no apareguin als scripts finals. Per tant, els comentaris no tenen cap efecte negatiu a producció.
 
-Later in the tutorial there will be a chapter <info:code-quality> that also explains how to write better comments.
+Més endavant trobareu un capítol anomenat <info:code-quality> que també explica com escriure millors comentaris.
