@@ -1,6 +1,6 @@
-# The JavaScript language
+# El llenguatge JavaScript
 
-Here we learn JavaScript, starting from scratch and go on to advanced concepts like OOP.
+Aquí aprenem JavaScript, començant des de zero i passant per conceptes avançats com la POO(programació orientada a objectes).
 
-We concentrate on the language itself here, with the minimum of environment-specific notes.
+Ens concentrem en el llenguatge en sí, amb el mínim de explicacions sobre conceptes específics de l'entorn.
 
