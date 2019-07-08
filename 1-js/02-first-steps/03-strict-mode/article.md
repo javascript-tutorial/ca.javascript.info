@@ -53,6 +53,7 @@ Per al futur, quan utilitzeu la consola del navegador per provar funcions, tingu
 
 De vegades, quan `use strict` fa una diferència, obtindreu resultats incorrectes.
 
+<<<<<<< HEAD
 Podem teclejar `key:Shift+Enter` per introduir línies múltiples, i posar `use strict` a la part superior, així:
 
 ```js
@@ -64,6 +65,19 @@ Podem teclejar `key:Shift+Enter` per introduir línies múltiples, i posar `use st
 Funciona en la majoria de navegadors, com Firefox i Chrome.
 
 Si no és així, la manera més segura de garantir el mode estricte seria introduint el codi a la consola d'aquesta manera:
+=======
+You can try to press `key:Shift+Enter` to input multiple lines, and put `use strict` on top, like this:
+
+```js
+'use strict'; <Shift+Enter for a newline>
+//  ...your code
+<Enter to run>
+```
+
+It works in most browsers, namely Firefox and Chrome.
+
+If it doesn't, the most reliable way to ensure `use strict` would be to input the code into console like this:
+>>>>>>> 5e9eca374f644ea85c7d548bbe344fd30e5fb89d
 
 ```js
 (function() {

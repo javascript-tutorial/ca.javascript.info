@@ -107,11 +107,20 @@ Les noves eines fan que la conversió sigui ràpida i transparent, permetent als
 
 Alguns exemples d'aquests llenguatges:
 
+<<<<<<< HEAD
 - [CoffeeScript](http://coffeescript.org/) és "syntactic sugar" per JavaScript. Introdueix sintaxi més curta, permetent escriure codi més clar i precís. Generalment, els devs de Ruby se l'estimen força.
 - [TypeScript](http://www.typescriptlang.org/) se centra en afegir "tipatge estricte" per simplificar el desenvolupament i manteniment de sistemes complexos. És desenvolupat per Microsoft.
 - [Dart](https://www.dartlang.org/) és un llenguatge independent, amb el seu propi motor, que s'executa en entorns diferents del navegador (com les aplicacions mòbils). Originalment, Google l'oferí com a substitut de JavaScript, però actualment els navegadors requereixen que es converteixi a JavaScript, com els llenguatges anteriors.
 
 N'hi ha més. Per suposat, fins i tot emprant algun d'aquests llenguatges, hom hauria de conèixer JavaScript per tal d'entendre realment què està fent.
+=======
+- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
+- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
+- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
+- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+
+There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+>>>>>>> 5e9eca374f644ea85c7d548bbe344fd30e5fb89d
 
 ## Resum
 
