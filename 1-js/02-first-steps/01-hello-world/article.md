@@ -1,6 +1,10 @@
 # Hola, món!
 
+<<<<<<< HEAD
 El tutorial que esteu llegint versa sobre el nucli de JavaScript, que és independent de la plataforma. Més endavant, aprendreu sobre Node.js i altres plataformes que l'empren.
+=======
+This part of the tutorial is about core JavaScript, the language itself. Later on, you'll learn about Node.js and other platforms that use it.
+>>>>>>> be342e50e3a3140014b508437afd940cd0439ab7
 
 Però necessitem un entorn de treball per executar els scripts i, com aquest llibre és en línia, el navegador és una bona opció. Mantindrem la quantitat mínima de comandes específiques del navegador (com `alert`) perquè no pergueu temps si planegeu centrar-vos en un altre entorn (com Node.js). Ens centrarem en JavaScript al navegador en la [propera part](/ui) del tutorial.
 
@@ -45,8 +49,13 @@ L'etiqueta `<script>` conté codi JavaScript que s'executa automàticament quan 
 
 L'etiquta `<script>` té alguns atributs poc emprats avui dia però que encara es poden trobar a codi antic:
 
+<<<<<<< HEAD
 L'atribut `type`: <code>&lt;script <u>type</u>=...&gt;</code>
 : L'antic estàndard de HTML, HTML4, requeria que un script tingués un `type`. Normalment era `type="text/javascript"`. Ara ja no fa falta. També cal dir que HTML5, l'estàndard modern de HTML, canvià per complet el significat d'aquest atribut. Actualment, es pot emprar pels mòduls de JavaScript. Això, però, és un tema avançat; parlarem sobre mòduls en un altre apartat del tutorial.
+=======
+The `type` attribute: <code>&lt;script <u>type</u>=...&gt;</code>
+: The old HTML standard, HTML4, required a script to have a `type`. Usually it was `type="text/javascript"`. It's not required anymore. Also, the modern HTML standard, HTML5, totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic; we'll talk about modules in another part of the tutorial.
+>>>>>>> be342e50e3a3140014b508437afd940cd0439ab7
 
 L'atribut `language`: <code>&lt;script <u>language</u>=...&gt;</code>
 : Aquest atribut pretenia mostrar el llenguatge del script; la seva existència ja no té sentit perquè JavaScript és el llenguatge per defecte. No hi ha necessitat de fer-lo servir.
