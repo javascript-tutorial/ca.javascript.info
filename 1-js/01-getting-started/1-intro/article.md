@@ -75,7 +75,7 @@ Com a mostra, algunes d'aquestes restriccions són:
     Aquesta limitació és, també, per la seguretat de l'usuari. Una pàgina de `http://anysite.com` que ha obert un usuari no ha de poder accedir a una altra pestanya amb la URL `http://gmail.com` i robar-hi informació.
 - JavaScript pot comunicar-se fàcilment a través d'internet amb el servidor d'on prové la pàgina, però llur capacitat per rebre dades d'altres llocs o dominis està bloquejada. Tot i que és possible, requereix l'aprovació explícita (expressada a les capçaleres HTTP) del lloc remot. Això, un cop més, és una limitació per seguretat.
 
-![](limitations.png)
+![](limitations.svg)
 
 Aquests límits desapareixen si JavaScript s'empra fora del navegador (en un servidor, per exemple). Els navegadors moderns també permeten plug-ins o extensions que poden demanar permisos addicionals.
 
@@ -92,8 +92,12 @@ JavaScript és l'única tecnologia de navegador que combina aquestes tres caract
 
 Això és el que fa JavaScript únic. Per això és l'eina més estesa per crear interfícies de navegador.
 
+<<<<<<< HEAD
 Quan es valora aprendre una nova tecnologia, és recomanable comprovar les perspectives d'aquesta: per tant, procedim a comentar les tendències que l'afectaran properament, incloent nous llenguatges i capacitats dels navegadors.
 
+=======
+That said, JavaScript also allows to create servers, mobile applications, etc.
+>>>>>>> 34e9cdca3642882bd36c6733433a503a40c6da74
 
 ## Llenguatges "sobre" JavaScript
 
@@ -107,11 +111,20 @@ Les noves eines fan que la conversió sigui ràpida i transparent, permetent als
 
 Alguns exemples d'aquests llenguatges:
 
+<<<<<<< HEAD
 - [CoffeeScript](http://coffeescript.org/) és "syntactic sugar" per JavaScript. Introdueix sintaxi més curta, permetent escriure codi més clar i precís. Generalment, els devs de Ruby se l'estimen força.
 - [TypeScript](http://www.typescriptlang.org/) se centra en afegir "tipatge estricte" per simplificar el desenvolupament i manteniment de sistemes complexos. És desenvolupat per Microsoft.
 - [Dart](https://www.dartlang.org/) és un llenguatge independent, amb el seu propi motor, que s'executa en entorns diferents del navegador (com les aplicacions mòbils). Originalment, Google l'oferí com a substitut de JavaScript, però actualment els navegadors requereixen que es converteixi a JavaScript, com els llenguatges anteriors.
 
 N'hi ha més. Per suposat, fins i tot emprant algun d'aquests llenguatges, hom hauria de conèixer JavaScript per tal d'entendre realment què està fent.
+=======
+- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
+- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
+- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
+- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+
+There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+>>>>>>> 34e9cdca3642882bd36c6733433a503a40c6da74
 
 ## Resum
 
