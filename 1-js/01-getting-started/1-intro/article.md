@@ -75,7 +75,7 @@ Com a mostra, algunes d'aquestes restriccions són:
     Aquesta limitació és, també, per la seguretat de l'usuari. Una pàgina de `http://anysite.com` que ha obert un usuari no ha de poder accedir a una altra pestanya amb la URL `http://gmail.com` i robar-hi informació.
 - JavaScript pot comunicar-se fàcilment a través d'internet amb el servidor d'on prové la pàgina, però llur capacitat per rebre dades d'altres llocs o dominis està bloquejada. Tot i que és possible, requereix l'aprovació explícita (expressada a les capçaleres HTTP) del lloc remot. Això, un cop més, és una limitació per seguretat.
 
-![](limitations.png)
+![](limitations.svg)
 
 Aquests límits desapareixen si JavaScript s'empra fora del navegador (en un servidor, per exemple). Els navegadors moderns també permeten plug-ins o extensions que poden demanar permisos addicionals.
 
