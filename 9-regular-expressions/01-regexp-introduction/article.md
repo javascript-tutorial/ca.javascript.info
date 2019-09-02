@@ -1,10 +1,16 @@
 # Patterns and flags
 
+Regular expressions is a powerful way to search and replace in text.
+
+In JavaScript, they are available as `RegExp` object, and also integrated in methods of strings.
+
+## Regular Expressions
+
 A regular expression (also "regexp", or just "reg") consists of a *pattern* and optional *flags*.
 
 There are two syntaxes to create a regular expression object.
 
-The long syntax:
+The "long" syntax:
 
 ```js
 regexp = new RegExp("pattern", "flags");
@@ -77,7 +83,7 @@ alert( "<h1> <h2> <h3>".search(regexp));
 
 Regular expressions may have flags that affect the search.
 
-There are only 5 of them in JavaScript:
+There are only 6 of them in JavaScript:
 
 `i`
 : With this flag the search is case-insensitive: no difference between `A` and `a` (see the example below).
