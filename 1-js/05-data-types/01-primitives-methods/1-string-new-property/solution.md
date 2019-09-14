@@ -1,5 +1,5 @@
 
-Try running it:
+Intenta executar:
 
 ```js run
 let str = "Hello";
@@ -9,18 +9,19 @@ str.test = 5; // (*)
 alert(str.test);
 ```
 
-Depending on whether you have `use strict` or not, the result may be:
-1. `undefined` (no strict mode)
-2. An error (strict mode).
+Depenent de si tens `use strict` o no, el resultat pot ser:
 
-Why? Let's replay what's happening at line `(*)`:
+1. `undefined` (mode no estricte)
+2. un error (mode estricte)
 
-1. When a property of `str` is accessed, a "wrapper object" is created.
-2. In strict mode, writing into it is an error.
-3. Otherwise, the operation with the property is carried on, the object gets the `test` property, but after that the "wrapper object" disappears.
+Per què? Parem esment al que passa a la línia `(*)`:
 
-So, without strict mode, in the last line `str` has no trace of the property.
+1. Quan s'accedeix a una propietat de `str`, es crea un "objecte embolcall".
+2. En mode estricte, escriure-hi és una error.
+3. Alternativament, l'operació amb la propietat continua, l'objecte agafa la propietat `test`, però després d'això "l'objecte embolcall" desapareix.
 
-**This example clearly shows that primitives are not objects.**
+Així, sense el mode estricte, en l'última línia no queda ni rastre de la propietat de  `str`. 
 
-They can't store additional data.
+**Aquest exemple mostra clarament que els primitius no són objectes.** 
+
+No poden emmagatzemar informació adicional. 
