@@ -1,3 +1,3 @@
-# Code quality
+# Qualitat del codi
 
-This chapter explains coding practices that we'll use further in the development. 
+Aquest capítol ens explica pràctiques de programació que utilitzarem d'ara en endavant en el desenvolupament.
