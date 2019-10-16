@@ -1,22 +1,22 @@
-# Methods of primitives
+# Mètodes dels primitius 
 
-JavaScript allows us to work with primitives (strings, numbers, etc.) as if they were objects.
+Javascript ens permet treballar amb primitius (cadena de caràcters, nombres, etc.) com si fóssen objectes.
 
-They also provide methods to call as such. We will study those soon, but first we'll see how it works because, of course, primitives are not objects (and here we will make it even clearer).
+També aporta mètodes propiament anomenats. Els estudiarem aviat, però primer veure'm com funciona perquè, per descomptat, els primitius no són objectes (i ho deixarem encara més clar).
 
-Let's look at the key distinctions between primitives and objects.
+Fixem-nos en les distincions claus entre primitius i objectes.
 
-A primitive
+Un primitiu
 
-- Is a value of a primitive type.
-- There are 6 primitive types: `string`, `number`, `boolean`, `symbol`, `null` and `undefined`.
+- Es un valor d'un tipus primitiu.
+- Hi ha 6 tipus primitius: `string`, `number`, `boolean`, `symbol`, `null` i `undefined`.
 
-An object
+Un objecte
 
-- Is capable of storing multiple values as properties.
-- Can be created with `{}`, for instance: `{name: "John", age: 30}`. There are other kinds of objects in JavaScript: functions, for example, are objects.
+- Es capaç d'emmagatzemar múltiples tipus com a propietats.
+- Es poden crear amb `{}`, com ara: `{name: "John", age: 30}`. Hi ha altres tipus d'objectes en Javascript: les funcions, per exemple, són objectes. 
 
-One of the best things about objects is that we can store a function as one of its properties.
+Una de les millors coses dels objectes és que podem emmagatzemar una funció com a propietats.  
 
 ```js run
 let john = {
@@ -29,32 +29,34 @@ let john = {
 john.sayHi(); // Hi buddy!
 ```
 
-So here we've made an object `john` with the method `sayHi`.
+Ací hem creat un objecte `john`amb el mètode `sayHi`.
 
-Many built-in objects already exist, such as those that work with dates, errors, HTML elements, etc. They have different properties and methods.
+Hi ha objectes integrats de sèrie, com els que que treballen amb dates, errors, elements HTML, etc. Tenen diferents propietats i mètodes. 
 
-But, these features come with a cost!
+Però, aquestes funcionalitats tenen un cost!
 
-Objects are "heavier" than primitives. They require additional resources to support the internal machinery. But as properties and methods are very useful in programming, JavaScript engines try to optimize them to reduce the additional burden.
+Els objectes són més "pesats" que els primitius. Requereixen recursos addicionals per a suportar aquesta maquinària interna. Però com que les propietats i els mètodes són molt útils en programació, el motor de Javascript tracta d'optimitzar-los per a reduir-ne la càrrega. 
 
-## A primitive as an object
 
-Here's the paradox faced by the creator of JavaScript:
 
-- There are many things one would want to do with a primitive like a string or a number. It would be great to access them as methods.
-- Primitives must be as fast and lightweight as possible.
+## Primitius com a objectes
 
-The solution looks a little bit awkward, but here it is:
+Heus ací la paradoxa a la qual va fer front el creador de Javascript:
 
-1. Primitives are still primitive. A single value, as desired.
-2. The language allows access to methods and properties of strings, numbers, booleans and symbols.
-3. In order for that to work, a special "object wrapper" that provides the extra functionality is created, and then is destroyed.
+- Hi ha moltes coses que hom voldria fer amb una primitiu (com una cadena de caràcters o un nombre). Seria genial accedir-hi a través de mètodes. 
+- Els primitius han de ser tan ràpids i lleugers com siga possible.
 
-The "object wrappers" are different for each primitive type and are called: `String`, `Number`, `Boolean` and `Symbol`. Thus, they provide different sets of methods.
+La solució sembla una mica estranya, però: 
 
-For instance, there exists a method [str.toUpperCase()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) that returns a capitalized string.
+- Els primitius són encara primitius. Un valor únic, com voliem. 
+- El llenguatge permet accedir mètodes i propietats de cadenes de caràcters, nombres, booleans i símbols. 
+- Per a que això funcione, es crea un "objecte embolcall" que aporta funcionalitats extra, i després es destrueix. 
 
-Here's how it works:
+Els "objectes embolcall" són diferents per a cada tipus primitiu i s'anomenen: `String`, `Number`, `Boolean` i `Symbol`. Així, aporten diferents mètodes. 
+
+Per exemple, existeix un mètode [str.toUpperCase()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) que retorna una cadena de caràcters en majúscula. 
+
+Heus ací com funciona:
 
 ```js run
 let str = "Hello";
@@ -62,17 +64,17 @@ let str = "Hello";
 alert( str.toUpperCase() ); // HELLO
 ```
 
-Simple, right? Here's what actually happens in `str.toUpperCase()`:
+Simple, veritat? El que realment ocorre en `str.toUpperCase()`és:
 
-1. The string `str` is a primitive. So in the moment of accessing its property, a special object is created that knows the value of the string, and has useful methods, like `toUpperCase()`.
-2. That method runs and returns a new string (shown by `alert`).
-3. The special object is destroyed, leaving the primitive `str` alone.
+1. La cadena de caràcters `str`és un primitiu. En el moment d'accedir la propietat, un objecte especial es crea, el qual coneix el valor de la cadena i conté mètodes útils, com `toUpperCase()`.
+2. El mètode retorna una cadena de caràcters nova (que es mostra amb `alert`).
+3. L'objecte especial es destrueix, deixant només el primitiu `str`.
 
-So primitives can provide methods, but they still remain lightweight.
+Per tant, els primitius poden tenir mètodes, però mantenir-se lleugers al mateix temps. 
 
-The JavaScript engine highly optimizes this process. It may even skip the creation of the extra object at all. But it must still adhere to the specification and behave as if it creates one.
+El motor de Javascript optimitza en gran mesura el procés. Fins i tot pot saltar-se la creació de l'objecte addicional. Però s'adhereix al es especificacions i es comporta com si en crees un. 
 
-A number has methods of its own, for instance, [toFixed(n)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) rounds the number to the given precision:
+Un nombre té mètodes propis, per exemple,  [toFixed(n)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) arrodoneix el número amb la precisió indicada:
 
 ```js run
 let n = 1.23456;
@@ -80,15 +82,14 @@ let n = 1.23456;
 alert( n.toFixed(2) ); // 1.23
 ```
 
-We'll see more specific methods in chapters <info:number> and <info:string>.
+Veurem mètodes més específics als capítols <info:number> and <info:string>.
 
+````warn header="Els constructors String/Number/Boolean`són només per a ús intern"
+Algunes llenguatges com Java ens permeten crear "objectes embolcall" per a primitius explicitament amb sintaxi de l'estil`new Number(1)` o `new Boolean(false)`.
 
-````warn header="Constructors `String/Number/Boolean` are for internal use only"
-Some languages like Java allow us to create "wrapper objects" for primitives explicitly using a syntax like `new Number(1)` or `new Boolean(false)`.
+En Javascript, això també és possible per raons històriques, però **no és recomanable**. Les coses poden tornar-se imprevisibles.
 
-In JavaScript, that's also possible for historical reasons, but highly **unrecommended**. Things will go crazy in several places.
-
-For instance:
+Per exemple:
 
 ```js run
 alert( typeof 0 ); // "number"
@@ -96,7 +97,7 @@ alert( typeof 0 ); // "number"
 alert( typeof new Number(0) ); // "object"!
 ```
 
-Objects are always truthy in `if`, so here the alert will show up:
+Els objectes són sempre s'avaluen com a vertaders en `if`, de manera que l'alerta serà:
 
 ```js run
 let zero = new Number(0);
@@ -106,25 +107,25 @@ if (zero) { // zero is true, because it's an object
 }
 ```
 
-On the other hand, using the same functions `String/Number/Boolean` without `new` is a totally sane and useful thing. They convert a value to the corresponding type: to a string, a number, or a boolean (primitive).
+Alternativament, emprar les mateixes funcions `String/Number/Boolean` sense `new` és totalment útil i assenyat. Converteixen el valor primitiu corresponent: cadena de caràcters, nombre o booleà.
 
-For example, this is entirely valid:
+Per exemple, això és perfectament vàlid: 
+
 ```js
-let num = Number("123"); // convert a string to number
+let num = Number("123"); // converteix 'string' a 'number'
 ```
 ````
 
+​````warn header="null/undefined no tenen mètodes"
+Els primitius especials `null` i `undefined` són excepcions. No tenen "objectes embolcall" corresponents i tampoc mètodes. D'alguna forma, són els tipus "més primitius",
 
-````warn header="null/undefined have no methods"
-The special primitives `null` and `undefined` are exceptions. They have no corresponding "wrapper objects" and provide no methods. In a sense, they are "the most primitive".
+L'intent d'accedir a una propietat d'aquest tipus resultaria en error:
 
-An attempt to access a property of such value would give the error:
-
-```js run
+​```js run
 alert(null.test); // error
 ````
 
-## Summary
+## Resum
 
-- Primitives except `null` and `undefined` provide many helpful methods. We will study those in the upcoming chapters.
-- Formally, these methods work via temporary objects, but JavaScript engines are well tuned to optimize that internally, so they are not expensive to call.
+- Els primitius, a excepció de `null`i `undefined`tenen mètodes molt útils. Els estudiarem en els capítols següents. 
+- En un sentit estricte, aquests mètodes funcionen a través d'objectes temporals, però els motors de Javascript estan ben preparats per a optimizar-los, de manera que no perjudiquen el rendiment. 

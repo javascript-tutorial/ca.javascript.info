@@ -1,11 +1,11 @@
-importance: 5
+importància: 5
 
 ---
 
-# Can I add a string property?
+# Puc afegir una propietat a una cadena de caràcters?
 
 
-Consider the following code:
+Considera el codi següent:
 
 ```js
 let str = "Hello";
@@ -15,4 +15,5 @@ str.test = 5;
 alert(str.test);
 ```
 
-How do you think, will it work? What will be shown?
+Com creus que funcionarà? Què creus que es mostrarà?
+
