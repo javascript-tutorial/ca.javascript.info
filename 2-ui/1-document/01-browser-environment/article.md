@@ -1,121 +1,120 @@
-# Browser environment, specs
+# Entorn del navegador, especificacions
 
-The JavaScript language was initially created for web browsers. Since then, it has evolved and become a language with many uses and platforms.
+JavaScript es va crear inicialment per a navegadors web. Des d’aleshores, ha evolucionat i s’ha convertit en un idioma amb molts usos i plataformes.
 
-A platform may be a browser, or a web-server, or a washing machine, or another *host*. Each of them provides platform-specific functionality. The JavaScript specification calls that a *host environment*.
+Una plataforma pot ser un navegador, un servidor web, una rentadora, o un altre *host*. Cadascun d'ells ofereix una funcionalitat específica a la plataforma. L'especificació JavaScript l'anomena *host environment*.
 
-A host environment provides platform-specific objects and functions additional to the language core. Web browsers give a means to control web pages. Node.js provides server-side features, and so on.
+Un *host environment* proporciona objectes i funcions específiques de la plataforma addicionals al nucli del llenguatge. Els navegadors web proporcionen un mitjà per controlar les pàgines web. Node.js proporciona funcions del servidor, i així, successivament.
 
-Here's a bird's-eye view of what we have when JavaScript runs in a web-browser:
+A continuació s'explica el que passa quan JavaScript funciona en un navegador web:
 
 ![](windowObjects.svg)
 
-There's a "root" object called `window`. It has two roles:
+Hi ha un objecte "arrel" anomenat `window`. Té dos papers:
 
-1. First, it is a global object for JavaScript code, as described in the chapter <info:global-object>.
-2. Second, it represents the "browser window" and provides methods to control it.
+1. En primer lloc, és un objecte global per al codi JavaScript, tal com es descriu al capítol <info:global-object>.
+2. En segon lloc, representa la "browser window" i proporciona mètodes per controlar-la.
 
-For instance, here we use it as a global object:
+Per exemple, aquí el fem servir com a objecte global:
 
 ```js run
 function sayHi() {
   alert("Hello");
 }
 
-// global functions are accessible as properties of window
+// Les funcions globals són accessibles com a propietats de la finestra (window)
 window.sayHi();
 ```
 
-And here we use it as a browser window, to see the window height:
+I aquí la fem servir com a finestra del navegador, per veure l'alçada de la finestra (window):
 
 ```js run
 alert(window.innerHeight); // inner window height
 ```
 
-There are more window-specific methods and properties, we'll cover them later.
+Hi ha més mètodes i propietats específiques per les finestres, les veurem més endavant.
 
 ## Document Object Model (DOM)
 
-The `document` object gives access to the page content. We can change or create anything on the page using it.
+L’objecte `document` dóna accés al contingut de la pàgina. Podem canviar o crear qualsevol cosa de la pàgina utilitzant-lo.
 
-For instance:
+Per exemple:
 ```js run
-// change the background color to red
+// canvia el color de fons per vermell
 document.body.style.background = "red";
 
-// change it back after 1 second
+// es canvia de nou al cap d’un segon
 setTimeout(() => document.body.style.background = "", 1000);
 ```
 
-Here we used `document.body.style`, but there's much, much more. Properties and methods are described in the specification. There happen to be two working groups who develop it:
+Aquí hem utilitzat `document.body.style`, però hi ha molt, molt més. Les propietats i els mètodes es descriuen a l'especificació. Hi ha dos grups de treball que el desenvolupen:
 
-1. [W3C](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium) -- the documentation is at <https://www.w3.org/TR/dom>.
-2. [WhatWG](https://en.wikipedia.org/wiki/WHATWG), publishing at <https://dom.spec.whatwg.org>.
+1. [W3C](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium) -- la documentació és a <https://www.w3.org/TR/dom>.
+2. [WhatWG](https://en.wikipedia.org/wiki/WHATWG), publicant a <https://dom.spec.whatwg.org>.
 
-As it happens, the two groups don't always agree, so it's like we have two sets of standards. But they are very similar and eventually things merge. The documentation that you can find on the given resources is very similar, with about a 99% match. There are very minor differences that you probably won't notice.
+I com sol passar, els dos grups no sempre estan d’acord, de manera que és com si tinguéssim dos conjunts estàndards. Però són molt similars i, eventualment, les coses es fusionen. La documentació que podeu trobar als recursos donats és molt similar, amb un 99% aproximat. Hi ha diferències molt petites que probablement ni us adonareu.
 
-Personally, I find <https://dom.spec.whatwg.org> more pleasant to use.
+Personalment, em sembla <https://dom.spec.whatwg.org> més agradable d'utilitzar.
 
-In the ancient past, there was no standard at all -- each browser implemented however it wanted. Different browsers had different sets, methods, and properties for the same thing, and developers had to write different code for each of them. Dark, messy times.
+En l'edat antiga, no hi havia cap estàndard en absolut, cada navegador implementava com els hi semblava. Els diferents navegadors tenien diferents configuracions, mètodes i propietats per a la mateixa cosa, i els desenvolupadors havien d’escriure codi diferent per a cadascun d’ells. Temps foscos i desordenats.
 
-Even now we can sometimes meet old code that uses browser-specific properties and works around incompatibilities. But, in this tutorial we'll use modern stuff: there's no need to learn old things until you really need to (chances are high that you won't).
+Fins i tot ara de vegades podem trobar codi antic que utilitza propietats específiques del navegador i funciona amb incompatibilitats. Però, en aquest tutorial utilitzarem coses modernes: no cal que aprenguem coses antigues fins que no es necessiten realment (les probabilitats són altes que no sigui necessari).
 
-Then the DOM standard appeared, in an attempt to bring everyone to an agreement. The first version was "DOM Level 1", then it was extended by DOM Level 2, then DOM Level 3, and now it's reached DOM Level 4. People from WhatWG group got tired of version numbers and are calling it just "DOM", without a number. So we'll do the same.
+Aleshores va aparèixer l’estàndard DOM, per intentar que tothom s'entengués. La primera versió va ser "DOM Nivell 1", després es va ampliar a DOM Nivell 2, després DOM Nivell 3 i ara ja s'ha arribat a DOM Nivell 4. La gent del grup WhatWG es va cansar dels números de versió i diuen només "DOM", sense número. Així que farem el mateix.
 
-```smart header="DOM is not only for browsers"
-The DOM specification explains the structure of a document and provides objects to manipulate it. There are non-browser instruments that use it too.
+```smart header="DOM no només és per a navegadors"
+L’especificació DOM explica l’estructura d’un document i proporciona objectes per manipular-lo. Hi ha instruments que no són de navegador que també l’utilitzen.
 
-For instance, server-side tools that download HTML pages and process them use the DOM. They may support only a part of the specification though.
+Per exemple, les eines del servidor que descarreguen pàgines HTML i les processen utilitzen el DOM. Tanmateix, només poden donar suport a una part de l'especificació.
 ```
 
-```smart header="CSSOM for styling"
-CSS rules and stylesheets are not structured like HTML. There's a separate specification [CSSOM](https://www.w3.org/TR/cssom-1/) that explains how they are represented as objects, and how to read and write them.
+```smart header="CSSOM per l'estil"
+Les regles i fulls d'estils CSS no estan estructurats com HTML. Hi ha una especificació per separat [CSSOM] (https://www.w3.org/TR/cssom-1/) que explica com es representen com a objectes i com s'han de llegir i escriure.
 
-CSSOM is used together with DOM when we modify style rules for the document. In practice though, CSSOM is rarely required, because usually CSS rules are static. We rarely need to add/remove CSS rules from JavaScript, so we won't cover it right now.
+CSSOM s'utilitza juntament amb DOM quan modifiquem les regles d'estil del document. Tanmateix, en la pràctica, rarament es requereix CSSOM, perquè normalment les regles CSS són estàtiques. Rarament cal afegir o treure les regles CSS de JavaScript, de manera que no ho cobrirem ara mateix.
 ```
 
-## BOM (part of HTML spec)
+## BOM (part de les especificacions HTML)
 
-Browser Object Model (BOM) are additional objects provided by the browser (host environment) to work with everything except the document.
+El Browser Object Model (BOM) són objectes addicionals proporcionats pel navegador (host environment) per treballar amb tot, excepte el document.
 
-For instance:
+Per exemple:
 
-- The [navigator](mdn:api/Window/navigator) object provides background information about the browser and the operating system. There are many properties, but the two most widely known are: `navigator.userAgent` -- about the current browser, and `navigator.platform` -- about the platform (can help to differ between Windows/Linux/Mac etc).
-- The [location](mdn:api/Window/location) object allows us to read the current URL and can redirect the browser to a new one.
+- L'objecte [navigator](mdn:api/Window/navigator) proporciona informació de fons sobre el navegador i el sistema operatiu. Hi ha moltes propietats, però les dues més conegudes són: `navigator.userAgent` -- sobre el navegador actual i `navigator.platform` -- sobre la plataforma (pot ajudar diferenciar entre Windows/Linux/Mac, etc.).
+- L'objecte [location](mdn:api/Window/location) permet llegir l’URL actual i es pot redirigir el navegador cap a una nova URL.
 
-Here's how we can use the `location` object:
+A continuació, es mostra com podem fer servir l'objecte `location`:
 
 ```js run
-alert(location.href); // shows current URL
+alert(location.href); // mostra URL actual
 if (confirm("Go to wikipedia?")) {
-  location.href = "https://wikipedia.org"; // redirect the browser to another URL
+  location.href = "https://wikipedia.org"; // redirigeix el navegador a una URL diferent
 }
 ```
 
-Functions `alert/confirm/prompt` are also a part of BOM: they are directly not related to the document, but represent pure browser methods of communicating with the user.
+Les funcions `alert/confirm/prompt` també formen part de la BOM: no estan directament relacionades amb el document, sinó que representen mètodes purs del navegador per comunicar-se amb l'usuari.
 
+```smart header="Especificació HTML"
+El BOM és la part general de l'[especificació HTML](https://html.spec.whatwg.org).
 
-```smart header="HTML specification"
-BOM is the part of the general [HTML specification](https://html.spec.whatwg.org).
-
-Yes, you heard that right. The HTML spec at <https://html.spec.whatwg.org> is not only about the "HTML language" (tags, attributes), but also covers a bunch of objects, methods and browser-specific DOM extensions. That's "HTML in broad terms".
+Sí, ho has sentit bé. L'especificació HTML de <https://html.spec.whatwg.org> no només es refereix al "llenguatge HTML" (etiquetes, atributs), sinó que també abasta un munt d'objectes, mètodes i extensions DOM específiques del navegador. Això és "HTML en termes amplis".
 ```
 
-## Summary
+## Resum
 
-Talking about standards, we have:
+Parlant d'estàndards, tenim:
 
-DOM specification
-: Describes the document structure, manipulations and events, see <https://dom.spec.whatwg.org>.
+Especificació DOM
+: Descriu l'estructura del document, les manipulacions i els esdeveniments, veure <https://dom.spec.whatwg.org>.
 
-CSSOM specification
-: Describes stylesheets and style rules, manipulations with them and their binding to documents, see <https://www.w3.org/TR/cssom-1/>.
+Especificació CSSOM
+: Descriu els fulls i les regles d’estil, les manipulacions i la vinculació als documents d'aquests, veure <https://www.w3.org/TR/cssom-1/>.
 
-HTML specification
-: Describes the HTML language (e.g. tags) and also the BOM (browser object model) -- various browser functions: `setTimeout`, `alert`, `location` and so on, see <https://html.spec.whatwg.org>. It takes the DOM specification and extends it with many additional properties and methods.
+Especificació HTML
+: Descriu l’idioma HTML (per exemple, les etiquetes) i també el BOM (browser object model) -- diverses funcions del navegador: `setTimeout`, `alert`, `location` etcètera, veure <https://html.spec.whatwg.org>. Agafa l’especificació DOM i l’amplia amb moltes propietats i mètodes addicionals.
 
-Now we'll get down to learning DOM, because the document plays the central role in the UI.
+Ara aprendrem DOM, perquè el document té un paper vital en el UI.
 
-Please note the links above, as there's so much stuff to learn it's impossible to cover and remember everything.
+Pots pendre nota dels enllaços anteriors, ja que hi ha tantes coses per aprendre que és impossible cobrir i recordar-ho tot.
 
-When you'd like to read about a property or a method, the Mozilla manual at <https://developer.mozilla.org/en-US/search> is a nice resource, but reading the corresponding spec may be better: it's more complex and longer to read, but will make your fundamental knowledge sound and complete.
+Quan volguis llegir una propietat o un mètode, el manual de Mozilla a <https://developer.mozilla.org/en-US/search> és un bon recurs, però llegir les especificacions corresponents pot ser millor: és més complex i més llarg de llegir, però farà que el vostre coneixement fonamental sigui més complet.
