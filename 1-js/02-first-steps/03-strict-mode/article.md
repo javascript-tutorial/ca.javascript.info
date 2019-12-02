@@ -4,7 +4,11 @@ Durant molt de temps, JavaScript ha evolucionat sense problemes de compatibilita
 
 Això tenia l'avantatge de no trencar mai el codi existent. Però l'inconvenient era que qualsevol errada o decisió imperfecta dels creadors de JavaScript es quedés en el llenguatge per sempre.
 
+<<<<<<< HEAD
 Aquest era el cas fins al 2009, quan va aparèixer ECMAScript 5 (ES5). Afegia noves característiques al llenguatge i modificava algunes de les existents. Per mantenir el codi antic funcionant, la majoria de les modificacions estan desactivades per defecte. Necessites activar-les explícitament amb una directiva especial: `"use strict"`.
+=======
+This was the case until 2009 when ECMAScript 5 (ES5) appeared. It added new features to the language and modified some of the existing ones. To keep the old code working, most such modifications are off by default. You need to explicitly enable them with a special directive: `"use strict"`.
+>>>>>>> 47d186598add3a0ea759615596a12e277ce8fb5a
 
 ## "use strict"
 
@@ -19,9 +23,13 @@ Per exemple:
 ...
 ```
 
+<<<<<<< HEAD
 Aprendrem a utilitzar funcions (una manera d'agrupar instruccions) aviat.
 
 D'ara endavant, tingueu en compte que `"use strict"` es pot posar al principi de la majoria de tipus de funcions en comptes de tot el script. Fer això només habilita el mode estricte en aquesta funció. Però habitualment, la gent ho utilitza per a tot el script.
+=======
+We will learn functions (a way to group commands) soon. Looking ahead, let's note that `"use strict"` can be put at the beginning of the function body instead of the whole script. Doing that enables strict mode in that function only. But usually, people use it for the whole script.
+>>>>>>> 47d186598add3a0ea759615596a12e277ce8fb5a
 
 
 ````warn header="Assegureu-vos que \"use strict\" està a la part superior"
@@ -44,7 +52,11 @@ Només comentaris poden aparèixer per sobre d'`"use strict"`.
 ```warn header="No hi ha cap manera per a cancel·lar el `use strict`"
 No existeix cap directiva semblant a `"no use strict"` que retorna el motor al comportament antic.
 
+<<<<<<< HEAD
 Quan entrem al mode estricte, no hi ha retorn.
+=======
+Once we enter strict mode, there's no going back.
+>>>>>>> 47d186598add3a0ea759615596a12e277ce8fb5a
 ```
 
 ## Consola del navegador
@@ -53,6 +65,7 @@ Per al futur, quan utilitzeu la consola del navegador per provar funcions, tingu
 
 De vegades, quan `use strict` fa una diferència, obtindreu resultats incorrectes.
 
+<<<<<<< HEAD
 Podem teclejar `key:Shift+Enter` per introduir línies múltiples, i posar `use strict` a la part superior, així:
 
 ```js
@@ -64,6 +77,19 @@ Podem teclejar `key:Shift+Enter` per introduir línies múltiples, i posar `use st
 Funciona en la majoria de navegadors, com Firefox i Chrome.
 
 Si no és així, la manera més segura de garantir el mode estricte seria introduint el codi a la consola d'aquesta manera:
+=======
+You can try to press `key:Shift+Enter` to input multiple lines, and put `use strict` on top, like this:
+
+```js
+'use strict'; <Shift+Enter for a newline>
+//  ...your code
+<Enter to run>
+```
+
+It works in most browsers, namely Firefox and Chrome.
+
+If it doesn't, the most reliable way to ensure `use strict` would be to input the code into console like this:
+>>>>>>> 47d186598add3a0ea759615596a12e277ce8fb5a
 
 ```js
 (function() {
