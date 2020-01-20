@@ -4,7 +4,11 @@ Com sabem pel capítol <info:structure>, els comentaris poden ser d'una única lín
 
 Normalment els utilitzem per descriure com i perquè funciona el codi.
 
+<<<<<<< HEAD
 A primera vista, comentar pot semblar obvi, però els novells de la programació acostumen a equivocar-se.
+=======
+At first sight, commenting might be obvious, but novices in programming often use them wrongly.
+>>>>>>> db3b3f8e7a08c153ad8fa0ae50633cdf95fa8912
 
 ## Comentaris dolents
 
@@ -18,7 +22,11 @@ complex;
 code;
 ```
 
+<<<<<<< HEAD
 Però en bon codi, la quantitat de comentaris "explicatius" hauria de ser mínima. De debò, el codi hauria de ser fàcil d'entendre sense comentaris.
+=======
+But in good code, the amount of such "explanatory" comments should be minimal. Seriously, the code should be easy to understand without them.
+>>>>>>> db3b3f8e7a08c153ad8fa0ae50633cdf95fa8912
 
 Existeix una gran norma sobre això: "si el codi és tan poc clar que necessita un comentari, llavors potser hauria de ser reescrit en comptes".
 
@@ -118,11 +126,19 @@ En realitat, podem evitar totalment els comentaris "explicatius". Existeixen alg
 
 Per tant, els comentaris explicatius solen ser dolents. Quins comentaris són bons?
 
+<<<<<<< HEAD
 Descriuen l'arquitectura:
 : Proporcionen una visió general d'alt nivell dels components, com interactuen, quin és el flux de control en diferents situacions... En resum -- una vista d'ocell del codi. Hi ha un llenguatge de diagrames especial [UML](https://ca.wikipedia.org/wiki/Llenguatge_de_modelitzaci%C3%B3_unificat) per a diagrames d'arquitectura d'alt nivell. Sens dubte val la pena estudiar.
 
 Documenten l'ús d'una funció:
 : Hi ha una sintaxi especial [JSDoc](http://en.wikipedia.org/wiki/JSDoc) per a documentar funcions: l'ús, els paràmetres i els valors retornats. 
+=======
+Describe the architecture
+: Provide a high-level overview of components, how they interact, what's the control flow in various situations... In short -- the bird's eye view of the code. There's a special language [UML](http://wikipedia.org/wiki/Unified_Modeling_Language) to build high-level architecture diagrams explaining the code. Definitely worth studying.
+
+Document function parameters and usage
+: There's a special syntax [JSDoc](http://en.wikipedia.org/wiki/JSDoc) to document a function: usage, parameters, returned value.
+>>>>>>> db3b3f8e7a08c153ad8fa0ae50633cdf95fa8912
 
 	Per exemple:
 	For instance:
@@ -173,7 +189,12 @@ Bons comentaris ens ajuden a mantenir el codi de manera correcta, tornar després
 
 **Evita comentaris:**
 
+<<<<<<< HEAD
 - Que ens expliquen "com funciona el codi" i "que és el que fa".
 - Escriu-los només si és impossible fer que el codi sigui simple i auto descriptiu fins al punt que no els necessiti.
+=======
+- That tell "how code works" and "what it does".
+- Put them in only if it's impossible to make the code so simple and self-descriptive that it doesn't require them.
+>>>>>>> db3b3f8e7a08c153ad8fa0ae50633cdf95fa8912
 
 Els comentaris també són utilitzats per eines de documentació automàtica com JSDoc3: els llegeixen i generen documents en HTML (o documents en altres formats).
