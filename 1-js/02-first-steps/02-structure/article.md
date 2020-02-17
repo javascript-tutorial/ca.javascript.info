@@ -94,7 +94,11 @@ Però haurien de ser dues sentències separades, no una. Aquesta fusió, en aque
 
 Recomanem posar punts i coma entre sentències encara que estiguin separades per salts de línia. Aquesta norma té una gran adopció per part de la comunitat. Ho comentem un altre cop -- *és possible* obviar els punts i coma la majoria dels cops. Però és més segur -- sobretot per a principiants -- emprar-los.
 
+<<<<<<< HEAD
 ## Comentaris
+=======
+## Comments [#code-comments]
+>>>>>>> 9acc1302a14a3bbabbc9bf95d04581094bd0f1a8
 
 Conforme passa el temps, els programes esdevenen més i més complexos. Esdevé necessari afegir *comentaris* que descriuen què fa el codi i per què ho fa.
 
