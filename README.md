@@ -6,7 +6,7 @@ This repository hosts the Catalan content of the Modern JavaScript Tutorial, pub
 
 We'd like to make the tutorial available in many languages. Please help us to translate.
 
-See <https://github.com/javascript-tutorial/translate> for the details.
+See <https://javascript.info/translate> for the details.
 
 ## Contributions
 
@@ -35,5 +35,5 @@ Each of these files starts from the `# Main header`.
 It's very easy to add something new.
 
 ---
-💓  
+♥  
 Ilya Kantor @iliakan
