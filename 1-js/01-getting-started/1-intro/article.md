@@ -4,7 +4,11 @@ Vegem què fa de JavaScript un llenguatge tan especial, què podem aconseguir am
 
 ## Què és JavaScript?
 
+<<<<<<< HEAD
 *JavaScript* fou inicialment creat per a *"donar vida a les pàgines web"*.
+=======
+*JavaScript* was initially created to "make web pages alive".
+>>>>>>> b85413d0bdd6f4f468fcadeacb4c4056e3671ce1
 
 Els programes escrits en aquest llenguatge s'anomenen *scripts*. Poden ser escrits directament al codi HTML d'una pàgina web i executar-se automàticament quan la pàgina es carrega.
 
@@ -12,8 +16,13 @@ Els scripts es proporcionen i s'executen com a text pla. No necessiten cap prepa
 
 En aquest aspecte, JavaScript és molt diferent d'un altre llenguatge anomenat [Java](https://ca.wikipedia.org/wiki/Java_(llenguatge_de_programaci%C3%B3)).
 
+<<<<<<< HEAD
 ```smart header="Per què <u>Java</u>Script?"
 Quan JavaScript fou creat, tenia un altre nom: "LiveScript". Però Java era molt popular en aquella època, així que es decidí que posicionar un nou llenguatge com el "germà petit" de Java seria útil.
+=======
+```smart header="Why is it called <u>Java</u>Script?"
+When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+>>>>>>> b85413d0bdd6f4f468fcadeacb4c4056e3671ce1
 
 No obstant, a l'evolucionar, JavaScript esdevingué un llenguatge completament independent amb la seva pròpia especificació anomenada  [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), i actualment no té cap tipus de relació amb Java.
 ```
@@ -38,7 +47,11 @@ Els motors són complicats, però els fonaments són fàcils.
 2. Posteriorment, converteix ("compiles") el script a llenguatge màquina.
 3. Finalment, el codi màquina s'executa veloçment.
 
+<<<<<<< HEAD
 El motor aplica optimitzacions a cada pas del procés. Fins i tot supervisa l'script compilat mentre s'executa, analitza les dades que rep i retorna, i aplica optimitzacions al codi màquina basant-se en aquest coneixement. Quan això passa, els scripts s'executen força ràpid.
+=======
+The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
+>>>>>>> b85413d0bdd6f4f468fcadeacb4c4056e3671ce1
 ```
 
 ## Què pot fer JavaScript al navegador?
@@ -63,7 +76,11 @@ Les capacitats de JavaScript al navegador són limitades per protegir a l'usuari
 
 Com a mostra, algunes d'aquestes restriccions són:
 
+<<<<<<< HEAD
 - El codi JavaScript d'una pàgina web no pot llegir o escriure fitxers arbitraris al disc dur, copiar-los o executar programes. No té accés directe a funcions del sistema operatiu.
+=======
+- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS functions.
+>>>>>>> b85413d0bdd6f4f468fcadeacb4c4056e3671ce1
 
     Els navegadors moderns permeten treballar amb fitxers, però l'accés és limitat i només es garanteix si l'usuari realitza certes accions, com "soltar" (amb drag-and-drop) un fitxer a la finestra del navegador, o si el selecciona amb una etiqueta `<input>`.
 
@@ -92,8 +109,12 @@ JavaScript és l'única tecnologia de navegador que combina aquestes tres caract
 
 Això és el que fa JavaScript únic. Per això és l'eina més estesa per crear interfícies de navegador.
 
+<<<<<<< HEAD
 Quan es valora aprendre una nova tecnologia, és recomanable comprovar les perspectives d'aquesta: per tant, procedim a comentar les tendències que l'afectaran properament, incloent nous llenguatges i capacitats dels navegadors.
 
+=======
+That said, JavaScript also allows to create servers, mobile applications, etc.
+>>>>>>> b85413d0bdd6f4f468fcadeacb4c4056e3671ce1
 
 ## Llenguatges "sobre" JavaScript
 
@@ -107,11 +128,20 @@ Les noves eines fan que la conversió sigui ràpida i transparent, permetent als
 
 Alguns exemples d'aquests llenguatges:
 
+<<<<<<< HEAD
 - [CoffeeScript](http://coffeescript.org/) és "syntactic sugar" per JavaScript. Introdueix sintaxi més curta, permetent escriure codi més clar i precís. Generalment, els devs de Ruby se l'estimen força.
 - [TypeScript](http://www.typescriptlang.org/) se centra en afegir "tipatge estricte" per simplificar el desenvolupament i manteniment de sistemes complexos. És desenvolupat per Microsoft.
 - [Dart](https://www.dartlang.org/) és un llenguatge independent, amb el seu propi motor, que s'executa en entorns diferents del navegador (com les aplicacions mòbils). Originalment, Google l'oferí com a substitut de JavaScript, però actualment els navegadors requereixen que es converteixi a JavaScript, com els llenguatges anteriors.
 
 N'hi ha més. Per suposat, fins i tot emprant algun d'aquests llenguatges, hom hauria de conèixer JavaScript per tal d'entendre realment què està fent.
+=======
+- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
+- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
+- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
+- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+
+There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+>>>>>>> b85413d0bdd6f4f468fcadeacb4c4056e3671ce1
 
 ## Resum
 
