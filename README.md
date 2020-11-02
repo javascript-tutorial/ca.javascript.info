@@ -1,12 +1,16 @@
 # The Modern JavaScript Tutorial
 
+<<<<<<< HEAD
 This repository hosts the Catalan content of the Modern JavaScript Tutorial, published at [https://javascript.info](https://javascript.info).
+=======
+This repository hosts the English content of the Modern JavaScript Tutorial, published in [https://javascript.info](https://javascript.info).
+>>>>>>> dccca58f268ad6d5a6f2160613a8ea3c5cd53a2d
 
 ## Translations
 
 We'd like to make the tutorial available in many languages. Please help us to translate.
 
-See <https://github.com/javascript-tutorial/translate> for the details.
+See <https://javascript.info/translate> for the details.
 
 ## Contributions
 
@@ -28,12 +32,12 @@ The type of the material is defined by the file inside the folder:
 
   - `index.md` stands for a chapter
   - `article.md` stands for an article
-  - `task.md` stands for a task (solution must be provided in `solution.md` file aswell)
+  - `task.md` stands for a task (solution must be provided in `solution.md` file as well)
 
 Each of these files starts from the `# Main header`.
 
 It's very easy to add something new.
 
 ---
-💓  
+♥  
 Ilya Kantor @iliakan
