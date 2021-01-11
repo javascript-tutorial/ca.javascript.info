@@ -1,15 +1,24 @@
 # Mètodes dels primitius 
 
+<<<<<<< HEAD
 Javascript ens permet treballar amb primitius (cadena de caràcters, nombres, etc.) com si fóssen objectes.
 
 També aporta mètodes propiament anomenats. Els estudiarem aviat, però primer veure'm com funciona perquè, per descomptat, els primitius no són objectes (i ho deixarem encara més clar).
+=======
+JavaScript allows us to work with primitives (strings, numbers, etc.) as if they were objects. They also provide methods to call as such. We will study those soon, but first we'll see how it works because, of course, primitives are not objects (and here we will make it even clearer).
+>>>>>>> 468e3552884851fcef331fbdfd58096652964b5f
 
 Fixem-nos en les distincions claus entre primitius i objectes.
 
 Un primitiu
 
+<<<<<<< HEAD
 - Es un valor d'un tipus primitiu.
 - Hi ha 6 tipus primitius: `string`, `number`, `boolean`, `symbol`, `null` i `undefined`.
+=======
+- Is a value of a primitive type.
+- There are 7 primitive types: `string`, `number`, `bigint`, `boolean`, `symbol`, `null` and `undefined`.
+>>>>>>> 468e3552884851fcef331fbdfd58096652964b5f
 
 Un objecte
 
@@ -35,7 +44,11 @@ Hi ha objectes integrats de sèrie, com els que que treballen amb dates, errors,
 
 Però, aquestes funcionalitats tenen un cost!
 
+<<<<<<< HEAD
 Els objectes són més "pesats" que els primitius. Requereixen recursos addicionals per a suportar aquesta maquinària interna. Però com que les propietats i els mètodes són molt útils en programació, el motor de Javascript tracta d'optimitzar-los per a reduir-ne la càrrega. 
+=======
+Objects are "heavier" than primitives. They require additional resources to support the internal machinery.
+>>>>>>> 468e3552884851fcef331fbdfd58096652964b5f
 
 
 
@@ -48,9 +61,13 @@ Heus ací la paradoxa a la qual va fer front el creador de Javascript:
 
 La solució sembla una mica estranya, però: 
 
+<<<<<<< HEAD
 - Els primitius són encara primitius. Un valor únic, com voliem. 
 - El llenguatge permet accedir mètodes i propietats de cadenes de caràcters, nombres, booleans i símbols. 
 - Per a que això funcione, es crea un "objecte embolcall" que aporta funcionalitats extra, i després es destrueix. 
+=======
+For instance, there exists a string method [str.toUpperCase()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) that returns a capitalized `str`.
+>>>>>>> 468e3552884851fcef331fbdfd58096652964b5f
 
 Els "objectes embolcall" són diferents per a cada tipus primitiu i s'anomenen: `String`, `Number`, `Boolean` i `Symbol`. Així, aporten diferents mètodes. 
 
@@ -84,8 +101,13 @@ alert( n.toFixed(2) ); // 1.23
 
 Veurem mètodes més específics als capítols <info:number> and <info:string>.
 
+<<<<<<< HEAD
 ````warn header="Els constructors String/Number/Boolean`són només per a ús intern"
 Algunes llenguatges com Java ens permeten crear "objectes embolcall" per a primitius explicitament amb sintaxi de l'estil`new Number(1)` o `new Boolean(false)`.
+=======
+````warn header="Constructors `String/Number/Boolean` are for internal use only"
+Some languages like Java allow us to explicitly create "wrapper objects" for primitives using a syntax like `new Number(1)` or `new Boolean(false)`.
+>>>>>>> 468e3552884851fcef331fbdfd58096652964b5f
 
 En Javascript, això també és possible per raons històriques, però **no és recomanable**. Les coses poden tornar-se imprevisibles.
 
