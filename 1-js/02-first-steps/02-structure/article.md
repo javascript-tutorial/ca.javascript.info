@@ -94,7 +94,11 @@ Però haurien de ser dues sentències separades, no una. Aquesta fusió, en aque
 
 Recomanem posar punts i coma entre sentències encara que estiguin separades per salts de línia. Aquesta norma té una gran adopció per part de la comunitat. Ho comentem un altre cop -- *és possible* obviar els punts i coma la majoria dels cops. Però és més segur -- sobretot per a principiants -- emprar-los.
 
+<<<<<<< HEAD
 ## Comentaris
+=======
+## Comments [#code-comments]
+>>>>>>> 97ef86242f9f236b13152e1baf52a55c4db8728a
 
 Conforme passa el temps, els programes esdevenen més i més complexos. Esdevé necessari afegir *comentaris* que descriuen què fa el codi i per què ho fa.
 
@@ -135,8 +139,13 @@ alert('Hola');
 alert('món');
 ```
 
+<<<<<<< HEAD
 ```smart header="Empreu dreceres de teclat!"
 En la majoria dels editors, una línia de codi es pot comentar prement la drecera de teclat `key:Ctrl+/` per a un comentari d'una línia i alguna cosa similar a `key:Ctrl+Shift+/` -- per comentaris multilínia (seleccioneu un fragment de codi i premeu la drecera). Per Mac, proveu `key:Cmd` en lloc de `key:Ctrl`.
+=======
+```smart header="Use hotkeys!"
+In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl` and `key:Option` instead of `key:Shift`.
+>>>>>>> 97ef86242f9f236b13152e1baf52a55c4db8728a
 ```
 
 ````warn header="No es suporten comentaris aniuats!"
