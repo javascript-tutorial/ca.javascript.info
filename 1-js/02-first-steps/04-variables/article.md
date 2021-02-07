@@ -1,61 +1,61 @@
 # Variables
 
-Most of the time, a JavaScript application needs to work with information. Here are two examples:
-1. An online shop -- the information might include goods being sold and a shopping cart.
-2. A chat application -- the information might include users, messages, and much more.
+Normalment, una aplicació de JavaScript necessita funcionar amb informació. Aquí hi ha dos exemples:
+1. una botiga en línia -- la informació podria incloure productes que es venen i un carretó de la compra.
+2. una aplicació de xat -- la informació pot incloure usuaris, missatges i molt més.
 
-Variables are used to store this information.
+Les variables s'utilitzen per emmagatzemar aquesta informació.
 
-## A variable
+## Una variable
 
-A [variable](https://en.wikipedia.org/wiki/Variable_(computer_science)) is a "named storage" for data. We can use variables to store goodies, visitors, and other data.
+Una [variable](https://ca.wikipedia.org/wiki/Variable_(programaci%C3%B3)) és un espai reservat a la memòria, amb un nom, i utilitzat per a la informació. Podem utilitzar variables per emmagatzemar dades de productes, de visitants i d'altres.
 
-To create a variable in JavaScript, use the `let` keyword.
+Per a crear una variable en JavaScript, utilitzeu la paraula clau "let".
 
-The statement below creates (in other words: *declares* or *defines*) a variable with the name "message":
+L'expressió següent crea (en altres paraules: *declara* or *defineix*) una variable amb el nom "message":
 
 ```js
 let message;
 ```
 
-Now, we can put some data into it by using the assignment operator `=`:
+Ara, podem posar-hi algunes dades mitjançant l'operador de l'assignació `=`:
 
 ```js
 let message;
 
 *!*
-message = 'Hello'; // store the string
+message = 'Hello'; // emmagatzema la cadena
 */!*
 ```
 
-The string is now saved into the memory area associated with the variable. We can access it using the variable name:
+La dada de tipus "string" ara es desa a l'àrea de memòria associada a la variable. Podem accedir-hi utilitzant el nom de la variable:
 
 ```js run
 let message;
 message = 'Hello!';
 
 *!*
-alert(message); // shows the variable content
+alert(message); // mostra el contingut de la variable
 */!*
 ```
 
-To be concise, we can combine the variable declaration and assignment into a single line:
+Podem combinar la declaració de la variable i l'assignació en una sola línia:
 
 ```js run
-let message = 'Hello!'; // define the variable and assign the value
+let message = 'Hello!'; // defineix la variable i assigna el valor
 
 alert(message); // Hello!
 ```
 
-We can also declare multiple variables in one line:
+També podem declarar varies variables en una línia:
 
 ```js no-beautify
 let user = 'John', age = 25, message = 'Hello';
 ```
 
-That might seem shorter, but we don't recommend it. For the sake of better readability, please use a single line per variable.
+Això pot semblar més fàcil, però no ho recomanem. En nom d'una millor llegibilitat, utilitzeu una sola línia per variable.
 
-The multiline variant is a bit longer, but easier to read:
+La variant multilínia és una mica més llarga, però més fàcil de llegir:
 
 ```js
 let user = 'John';
@@ -63,14 +63,15 @@ let age = 25;
 let message = 'Hello';
 ```
 
-Some people also define multiple variables in this multiline style:
+Hi ha persones que defineixen múltiples variables en aquest estil multilínia:
+
 ```js no-beautify
 let user = 'John',
   age = 25,
   message = 'Hello';
 ```
 
-...Or even in the "comma-first" style:
+...O fins i tot en l'estil "primer la coma":
 
 ```js no-beautify
 let user = 'John'
@@ -78,47 +79,46 @@ let user = 'John'
   , message = 'Hello';
 ```
 
-Technically, all these variants do the same thing. So, it's a matter of personal taste and aesthetics.
+Tècnicament, totes aquestes variants fan el mateix, per tant és una qüestió de gust personal i estètica.
 
-
-````smart header="`var` instead of `let`"
-In older scripts, you may also find another keyword: `var` instead of `let`:
+````smart header="`var` en comptes de `let`"
+En codi antic, també podeu trobar una altra paraula clau: `var` en comptes de `let`:
 
 ```js
 *!*var*/!* message = 'Hello';
 ```
 
-The `var` keyword is *almost* the same as `let`. It also declares a variable, but in a slightly different, "old-school" way.
+La paraula clau `var` és *gairebé* el mateix que `let`. També declara una variable, però de manera diferent, una manera mes antiga.
 
-There are subtle differences between `let` and `var`, but they do not matter for us yet. We'll cover them in detail in the chapter <info:var>.
+Hi ha diferències subtils entre `let` i `var`, però en aquest moment no hi entrarem. Els explicarem detalladament al capítol <info:var>.
 ````
 
-## A real-life analogy
+## Una analogia real
 
-We can easily grasp the concept of a "variable" if we imagine it as a "box" for data, with a uniquely-named sticker on it.
+Podem entendre fàcilment el concepte de "variable" si l'imaginem com una "caixa" per a les dades, amb una etiqueta amb un nom únic.
 
-For instance, the variable `message` can be imagined as a box labeled `"message"` with the value `"Hello!"` in it:
+Per exemple, la variable `message` la podem imaginar com una caixa etiquetada `"message"` amb el valor `"Hello!"` dins:
 
 ![](variable.svg)
 
-We can put any value in the box.
+Podem posar qualsevol valor a la caixa.
 
-We can also change it as many times as we want:
+També podem canviar el valor tantes vegades com vulguem:
 ```js run
 let message;
 
 message = 'Hello!';
 
-message = 'World!'; // value changed
+message = 'World!'; // valor canviat
 
 alert(message);
 ```
 
-When the value is changed, the old data is removed from the variable:
+Quan es canvia el valor, el valor anterior s'elimina de la variable:
 
 ![](variable-change.svg)
 
-We can also declare two variables and copy data from one into the other.
+També podem declarar dues variables i copiar dades d'una a l'altra.
 
 ```js run
 let hello = 'Hello world!';
@@ -126,135 +126,138 @@ let hello = 'Hello world!';
 let message;
 
 *!*
-// copy 'Hello world' from hello into message
+// copia 'Hello world' de la variable hello a la  variable missatge
 message = hello;
 */!*
 
-// now two variables hold the same data
+// ara dues variables tenen les mateixes dades
 alert(hello); // Hello world!
 alert(message); // Hello world!
 ```
 
-```smart header="Functional languages"
-It's interesting to note that there exist [functional](https://en.wikipedia.org/wiki/Functional_programming) programming languages, like [Scala](http://www.scala-lang.org/) or [Erlang](http://www.erlang.org/) that forbid changing variable values.
+```smart header="Llenguatges funcionals"
+És interessant observar que existeixen llenguatges de programació [functional](https://ca.wikipedia.org/wiki/Programaci%C3%B3_funcional), com [Scala](http://www.scala-lang.org/) o [Erlang](http://www.erlang.org/) que no permeten canviar els valors de les variables.
 
-In such languages, once the value is stored "in the box", it's there forever. If we need to store something else, the language forces us to create a new box (declare a new variable). We can't reuse the old one.
+En aquests llenguatges, una vegada que el valor és a la"caixa", és allà per sempre. Si cal posar-hi un altre valor, el llenguatge ens obliga a crear una nova "caixa" (declarar una nova variable).No podem reutilitzar la mateixa.
 
-Though it may seem a little odd at first sight, these languages are quite capable of serious development. More than that, there are areas like parallel computations where this limitation confers certain benefits. Studying such a language (even if you're not planning to use it soon) is recommended to broaden the mind.
+Encara que pot semblar una mica estrany a primera vista, aquests llenguatges són molt capaços de un desenvolupament seriós. Encara més, hi ha àrees com càlculs paral·lels on aquesta limitació confereix certs beneficis. Estudiar aquests llenguatges (encara que no es tingui la intenció d'utilitzar-los aviat) es recomanable per a ampliar la ment.
 ```
 
-## Variable naming [#variable-naming]
+## Donar noms a les variables [#variable-naming]
 
-There are two limitations on variable names in JavaScript:
+Hi ha dues limitacions quant als noms de les variables en JavaScript:
 
-1. The name must contain only letters, digits, or the symbols `$` and `_`.
-2. The first character must not be a digit.
+1. El nom només pot contenir lletres, dígits o els símbols `$` i `_`.
+2. El primer caràcter no pot ser un dígit.
 
-Examples of valid names:
+Examples de noms valids:
 
 ```js
 let userName;
 let test123;
 ```
 
-When the name contains multiple words, [camelCase](https://en.wikipedia.org/wiki/CamelCase) is commonly used. That is: words go one after another, each word except first starting with a capital letter: `myVeryLongName`.
+Quan el nom conté paraules múltiples, habitualment s'utilitza [camelCase](https://ca.wikipedia.org/wiki/CamelCase). Això és:
+les paraules van una darrere l'altra, cada paraula excepte la primera començant amb majúscula: `myVeryLongName`.
 
-What's interesting -- the dollar sign `'$'` and the underscore `'_'` can also be used in names. They are regular symbols, just like letters, without any special meaning.
+El que és interessant és que -- el símbols de dòlar `'$'` i el de subratllat `'_'` també es poden utilitzar en noms. Són símbols normals, com les lletres, sense significat especial.
 
-These names are valid:
+Aquests noms són vàlids:
 
 ```js run untrusted
-let $ = 1; // declared a variable with the name "$"
-let _ = 2; // and now a variable with the name "_"
+let $ = 1; // declara una variable amb el nom "$"
+let _ = 2; // declara una variable amb el nom "_"
 
 alert($ + _); // 3
 ```
 
-Examples of incorrect variable names:
+Exemples de noms de variable incorrectes:
 
 ```js no-beautify
-let 1a; // cannot start with a digit
+let 1a; // no es pot començar amb un dígit
 
-let my-name; // hyphens '-' aren't allowed in the name
+let my-name; // els guionets '-' no es permeten al nom
 ```
 
-```smart header="Case matters"
-Variables named `apple` and `AppLE` are two different variables.
+```smart header="Majúscules o minúscules és important"
+Les variables anomenades `apple` i `AppLE` són dues variables diferents.
 ```
 
-````smart header="Non-Latin letters are allowed, but not recommended"
-It is possible to use any language, including cyrillic letters or even hieroglyphs, like this:
+````smart header="Es permeten caràcters no llatins, però no es recomanen"
+És possible utilitzar qualsevol llenguatge, incloent-hi caràcters cil·làmiques o fins i tot jeroglífics, com aquest:
 
 ```js
 let имя = '...';
 let 我 = '...';
 ```
 
-Technically, there is no error here, such names are allowed, but there is an international tradition to use English in variable names. Even if we're writing a small script, it may have a long life ahead. People from other countries may need to read it some time.
+Tècnicament, no hi ha cap error aquí, es permeten aquests noms, però hi ha un consens internacional per utilitzar l'anglès en noms de variables. Encara que estiguem escrivint un script petit, pot tenir una vida llarga per davant. És possible que la gent d'altres països hagi de llegir-ho més endavant.
 ````
 
-````warn header="Reserved names"
-There is a [list of reserved words](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), which cannot be used as variable names because they are used by the language itself.
+````warn header="Noms reservats"
+Hi ha una [llista de paraules reservades](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords),que no es poden utilitzar com a noms de variable perquè són 
+utilitzades pel llenguatge.
 
-For example: `let`, `class`, `return`, and `function` are reserved.
+Per example: `let`, `class`, `return`, i `function` estan reservades.
 
-The code below gives a syntax error:
+El script següent dóna un error de sintaxi:
 
 ```js run no-beautify
-let let = 5; // can't name a variable "let", error!
-let return = 5; // also can't name it "return", error!
+let let = 5; // no es pot anomenar una variable "let", error!
+let return = 5; // tampoc no es pot anomenar "return", error!
 ```
 ````
 
-````warn header="An assignment without `use strict`"
+````warn header="Una assignació sense `use strict`"
 
-Normally, we need to define a variable before using it. But in the old times, it was technically possible to create a variable by a mere assignment of the value without using `let`. This still works now if we don't put `use strict` in our scripts to maintain compatibility with old scripts.
+Normalment, hem de definir una variable abans d'utilitzar-la. Però temps enrere, era tècnicament possible crear una variable mitjançant una mera assignació del valor sense utilitzar `let`. 
+Això encara funciona si no posem `use strict` als nostre script per mantenir la compatibilitat amb scripts antics.
 
 ```js run no-strict
-// note: no "use strict" in this example
+// sense: no "use strict" en aquest exemple
 
-num = 5; // the variable "num" is created if it didn't exist
+num = 5; // la variable "num" es crea si no existeix
 
 alert(num); // 5
 ```
 
-This is a bad practice and would cause an error in strict mode:
+És una mala pràctica i causaria un error en mode estricte (use strict).:
 
 ```js
 "use strict";
 
 *!*
-num = 5; // error: num is not defined
+num = 5; // error: num no està definit
 */!*
 ```
 ````
 
 ## Constants
 
-To declare a constant (unchanging) variable, use `const` instead of `let`:
+Per declarar una variable constant (no es pot canviar), utilitzeu `const` en lloc de :`let`:
 
 ```js
 const myBirthday = '18.04.1982';
 ```
 
-Variables declared using `const` are called "constants". They cannot be changed. An attempt to do so would cause an error:
+Les variables declarades utilitzant `const` s'anomenen "constants". No es poden canviar. Intentar fer-ho provocaria un error:
 
 ```js run
 const myBirthday = '18.04.1982';
 
-myBirthday = '01.01.2001'; // error, can't reassign the constant!
+myBirthday = '01.01.2001'; // error, no es pot reassignar la constant!
 ```
 
-When a programmer is sure that a variable will never change, they can declare it with `const` to guarantee and clearly communicate that fact to everyone.
+Quan un programador o programadora està segur que una variable mai canviarà, la pot declarar amb `const` per garantir i comunicar clarament aquest fet a tothom.
 
 
-### Uppercase constants
+### Constants en majúscules
 
-There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution.
+Hi ha una pràctica generalitzada d'utilitzar constants com a àlies per a valors difícils de recordar que es coneixen abans de l'execució.
 
-Such constants are named using capital letters and underscores.
+Aquestes constants s'anomenen utilitzant lletres majúscules i guions baixos (subratllat).
 
-For instance, let's make constants for colors in so-called "web" (hexadecimal) format:
+Per exemple, fem constants per als colors en el format anomenat "web" (hexadecimal):
 
 ```js run
 const COLOR_RED = "#F00";
@@ -262,69 +265,70 @@ const COLOR_GREEN = "#0F0";
 const COLOR_BLUE = "#00F";
 const COLOR_ORANGE = "#FF7F00";
 
-// ...when we need to pick a color
+// ...quan calgui triar un color
 let color = COLOR_ORANGE;
 alert(color); // #FF7F00
 ```
 
-Benefits:
+Beneficis:
 
-- `COLOR_ORANGE` is much easier to remember than `"#FF7F00"`.
-- It is much easier to mistype `"#FF7F00"` than `COLOR_ORANGE`.
-- When reading the code, `COLOR_ORANGE` is much more meaningful than `#FF7F00`.
+- `COLOR_ORANGE` és molt més fàcil de recordar que `"#FF7F00"`.
+- És molt més fàcil escriure `"#FF7F00"` malament  que `COLOR_ORANGE`.
+- llegir `COLOR_ORANGE` té molt més significat que `#FF7F00`.
 
-When should we use capitals for a constant and when should we name it normally? Let's make that clear.
+Quan hauríem d'utilitzar majúscules per a una constant i quan hauríem de nomenar-les normalment (camelCase)? Deixem-ho clar.
 
-Being a "constant" just means that a variable's value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are *calculated* in run-time, during the execution, but do not change after their initial assignment.
+Ser una "constant" vol die que el valor d'una variable no canvia mai. Però hi ha constants que es coneixen abans de l'execució (com un valor hexadecimal per al vermell) i hi ha constants calculades en execució, però no canvien després de la seva assignació inicial.
 
-For instance:
+Per example:
 ```js
-const pageLoadTime = /* time taken by a webpage to load */;
+const pageLoadTime = /* temps d'una pàgina web per carregar */;
 ```
 
-The value of `pageLoadTime` is not known prior to the page load, so it's named normally. But it's still a constant because it doesn't change after assignment.
+El valor de `pageLoadTime` no es coneix abans de carregar la pàgina, així que s'anomena normalment (camelCase). Però és una constant perquè no canvia després de l'assignació.
 
-In other words, capital-named constants are only used as aliases for "hard-coded" values.  
+En altres paraules, les constants en majúscules només s'utilitzen com àlies per a valors "codificats".  
 
-## Name things right
+## Anomenar correctament
 
-Talking about variables, there's one more extremely important thing.
+Parlant de variables, hi ha una altra cosa molt important.
 
-A variable name should have a clean, obvious meaning, describe the data that it stores.
+Un nom de variable ha de tenir un significat net i obvi, i descriure la dada del seus possibles valors.
 
-Variable naming is one of the most important and complex skills in programming. A quick glance at variable names can reveal which code was written by a beginner versus an experienced developer.
+Nomenar les variables és una de les habilitats més importants i complexes en la programació. Un ràpid cop d'ull als noms de les variables pot revelar si el codi va ser escrit per un principiant o un programador experimentat.
 
-In a real project, most of the time is spent modifying and extending an existing code base rather than writing something completely separate from scratch. When we return to some code after doing something else for a while, it's much easier to find information that is well-labeled. Or, in other words, when the variables have good names.
+En un projecte real, la major part del temps es dedica a modificar i estendre una base de codi existent en lloc d'escriure una cosa completament nova. Quan tornem a un codi després de fer una altra cosa durant un temps, és molt més fàcil trobar informació amb noms correctes i clars. O, en altres paraules, quan les variables tenen bons noms.
 
-Please spend time thinking about the right name for a variable before declaring it. Doing so will repay you handsomely.
+Pensa bé el nom de les variable abans de declarar-les. 
 
-Some good-to-follow rules are:
+Algunes bones regles:
 
-- Use human-readable names like `userName` or `shoppingCart`.
-- Stay away from abbreviations or short names like `a`, `b`, `c`, unless you really know what you're doing.
-- Make names maximally descriptive and concise. Examples of bad names are `data` and `value`. Such names say nothing. It's only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
-- Agree on terms within your team and in your own mind. If a site visitor is called a "user" then we should name related variables `currentUser` or `newUser` instead of `currentVisitor` or `newManInTown`.
+- Utilitza noms llegibles com `.userName`. o `.shoppingCart`..
+- No utilitzes abreviatures o noms curts com `a`, `b`, `c`, excepte quan sigui necessari.
+- Tria noms descriptius i concisos. Exemples de noms erronis són `data` i `value`. Aquests noms no diuen res. Només està bé utilitzar-los si el context del codi fa que sigui obvi a quines dades o valor es refereix la variable .
+- poseu-vos d'acord en el vostre equip, o amb tu mateix, per a tenir un estàndard. Si un visitant de la web s'anomena ".user", llavors hauríem de nomenar les variables relacionades `.currentUser` o `.newUser`. en comptes de `.currentVisitor`. o `.newManIntown`
 
-Sounds simple? Indeed it is, but creating descriptive and concise variable names in practice is not. Go for it.
+Sona senzill? De fet ho és, però la creació de noms de variable descriptius i concisos en la pràctica no ho és. 
 
-```smart header="Reuse or create?"
-And the last note. There are some lazy programmers who, instead of declaring new variables, tend to reuse existing ones.
+```smart header="Reutilitzar o crear?"
+I l'última nota. Hi ha alguns programadors que, en lloc de declarar noves variables, tendeixen a reutilitzar les existents.
 
-As a result, their variables are like boxes into which people throw different things without changing their stickers. What's inside the box now? Who knows? We need to come closer and check.
+Com a resultat, les seves variables són com caixes en les quals la gent llança coses diferents sense canviar les etiquetes. 
+Què hi ha ara dins de la caixa? Qui sap? Hem d'acostar-nos i comprovar-ho.
 
-Such programmers save a little bit on variable declaration but lose ten times more on debugging.
+Aquests programadors estalvien una mica en la declaració de variable, però perden deu vegades més en la depuració.
 
-An extra variable is good, not evil.
+Una variable addicional és bona, no dolenta.
 
-Modern JavaScript minifiers and browsers optimize code well enough, so it won't create performance issues. Using different variables for different values can even help the engine optimize your code.
+Els "minifiers" i navegadors moderns amb JavaScript optimitzen els scripts prou bé, així que no creen problemes de rendiment. L'ús de variables diferents per a valors diferents pot fins i tot ajudar el navegador a optimitzar el vostres scripts.
 ```
 
-## Summary
+## Resum
 
-We can declare variables to store data by using the `var`, `let`, or `const` keywords.
+Podem declarar variables per emmagatzemar dades utilitzant les paraules clau .var., .let. o .const.
 
-- `let` -- is a modern variable declaration. The code must be in strict mode to use `let` in Chrome (V8).
-- `var` -- is an old-school variable declaration. Normally we don't use it at all, but we'll cover subtle differences from `let` in the chapter <info:var>, just in case you need them.
-- `const` -- is like `let`, but the value of the variable can't be changed.
+- `let` -- és una declaració de variable més recent. Els scripts han d'estar en mode estricte (use strict) per utilitzar "let" amb Chrome (V8).
+- `var` -- és una declaració de variable tradicional. Normalment no l'utilitzem, però cobrirem diferències amb "let" al capítol <info:var>, només per si de cas.
+- `const` -- és com "let", però el valor de la variable no es pot canviar.
 
-Variables should be named in a way that allows us to easily understand what's inside them.
+Les variables han de ser anomenades de manera que ens permetin entendre fàcilment què hi ha dins.
