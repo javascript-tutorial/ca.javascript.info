@@ -46,7 +46,11 @@ alert(3 +
 + 2);
 ```
 
+<<<<<<< HEAD
 El codi retorna `6` perquè JavaScript no insereix punts i coma aquí. És intuïtivament obvi que si la línia acaba amb un signe més `"+"`, llavors és una "expressió incompleta", així que el punt i coma no fa falta. I en aquest cas funciona com s'espera.
+=======
+The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so a semicolon there would be incorrect. And in this case, that works as intended.
+>>>>>>> 2901e0c64590a67d8a2bde1ea76a514d96f80469
 
 **Però hi ha situacions on JavaScript "falla" a l'assumir un punt i coma on realment fa falta.**
 
@@ -56,28 +60,43 @@ Aquests tipus d'error són força difícils de trobar i solucionar.
 Si teniu curiositat per veure un exemple concret d'aquests errors, vegeu aquest codi:
 
 ```js run
-[1, 2].forEach(alert)
+alert("Hello");
+
+[1, 2].forEach(alert);
 ```
 
+<<<<<<< HEAD
 Ara mateix no importa què signifiquen els claudàtors `[]` i `forEach`. Els estudiarem més endavant. Per ara, només cal que recordeu el resultat del codi: mostra `1` i després `2`.
 
 Ara, afegim un `alert` abans del codi i *no* li posem un punt i coma final:
 
 ```js run no-beautify
 alert("Hi haurà un error")
+=======
+No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of running the code: it shows `Hello`, then `1`, then `2`.
 
-[1, 2].forEach(alert)
+Now let's remove the semicolon after the `alert`:
+
+```js run no-beautify
+alert("Hello")
+>>>>>>> 2901e0c64590a67d8a2bde1ea76a514d96f80469
+
+[1, 2].forEach(alert);
 ```
 
+<<<<<<< HEAD
 Ara, si executem el codi, només el primer `alert` es mostra i llavors hi ha un error!
 
 Però tot torna a funcionar si afegim un punt i coma després de l'`alert`:
 ```js run
 alert("Tot va bé");
+=======
+The difference compared to the code above is only one character: the semicolon at the end of the first line is gone.
+>>>>>>> 2901e0c64590a67d8a2bde1ea76a514d96f80469
 
-[1, 2].forEach(alert)  
-```
+If we run this code, only the first `Hello` shows (and there's an error, you may need to open the console to see it). There are no numbers any more.
 
+<<<<<<< HEAD
 Ara tenim el missatge de "Tot va bé" seguit d'un `1` i un `2`.
 
 
@@ -90,11 +109,28 @@ alert("Hi haurà un error")[1, 2].forEach(alert)
 ```
 
 Però haurien de ser dues sentències separades, no una. Aquesta fusió, en aquest cas, és incorrecta, i d'aquí surt l'error. Això pot passar en altres situacions.
+=======
+That's because JavaScript does not assume a semicolon before square brackets `[...]`. So, the code in the last example is treated as a single statement.
+
+Here's how the engine sees it:
+
+```js run no-beautify
+alert("Hello")[1, 2].forEach(alert);
+```
+
+Looks weird, right? Such merging in this case is just wrong. We need to put a semicolon after `alert` for the code to work correctly.
+
+This can happen in other situations also.
+>>>>>>> 2901e0c64590a67d8a2bde1ea76a514d96f80469
 ````
 
 Recomanem posar punts i coma entre sentències encara que estiguin separades per salts de línia. Aquesta norma té una gran adopció per part de la comunitat. Ho comentem un altre cop -- *és possible* obviar els punts i coma la majoria dels cops. Però és més segur -- sobretot per a principiants -- emprar-los.
 
+<<<<<<< HEAD
 ## Comentaris
+=======
+## Comments [#code-comments]
+>>>>>>> 2901e0c64590a67d8a2bde1ea76a514d96f80469
 
 Conforme passa el temps, els programes esdevenen més i més complexos. Esdevé necessari afegir *comentaris* que descriuen què fa el codi i per què ho fa.
 
@@ -135,8 +171,13 @@ alert('Hola');
 alert('món');
 ```
 
+<<<<<<< HEAD
 ```smart header="Empreu dreceres de teclat!"
 En la majoria dels editors, una línia de codi es pot comentar prement la drecera de teclat `key:Ctrl+/` per a un comentari d'una línia i alguna cosa similar a `key:Ctrl+Shift+/` -- per comentaris multilínia (seleccioneu un fragment de codi i premeu la drecera). Per Mac, proveu `key:Cmd` en lloc de `key:Ctrl`.
+=======
+```smart header="Use hotkeys!"
+In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl` and `key:Option` instead of `key:Shift`.
+>>>>>>> 2901e0c64590a67d8a2bde1ea76a514d96f80469
 ```
 
 ````warn header="No es suporten comentaris aniuats!"
