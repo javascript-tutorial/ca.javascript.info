@@ -1,15 +1,24 @@
 # Mètodes dels primitius 
 
+<<<<<<< HEAD
 Javascript ens permet treballar amb primitius (cadena de caràcters, nombres, etc.) com si fóssen objectes.
 
 També aporta mètodes propiament anomenats. Els estudiarem aviat, però primer veure'm com funciona perquè, per descomptat, els primitius no són objectes (i ho deixarem encara més clar).
+=======
+JavaScript allows us to work with primitives (strings, numbers, etc.) as if they were objects. They also provide methods to call as such. We will study those soon, but first we'll see how it works because, of course, primitives are not objects (and here we will make it even clearer).
+>>>>>>> 18b1314af4e0ead5a2b10bb4bacd24cecbb3f18e
 
 Fixem-nos en les distincions claus entre primitius i objectes.
 
 Un primitiu
 
+<<<<<<< HEAD
 - Es un valor d'un tipus primitiu.
 - Hi ha 6 tipus primitius: `string`, `number`, `boolean`, `symbol`, `null` i `undefined`.
+=======
+- Is a value of a primitive type.
+- There are 7 primitive types: `string`, `number`, `bigint`, `boolean`, `symbol`, `null` and `undefined`.
+>>>>>>> 18b1314af4e0ead5a2b10bb4bacd24cecbb3f18e
 
 Un objecte
 
@@ -35,22 +44,37 @@ Hi ha objectes integrats de sèrie, com els que que treballen amb dates, errors,
 
 Però, aquestes funcionalitats tenen un cost!
 
+<<<<<<< HEAD
 Els objectes són més "pesats" que els primitius. Requereixen recursos addicionals per a suportar aquesta maquinària interna. Però com que les propietats i els mètodes són molt útils en programació, el motor de Javascript tracta d'optimitzar-los per a reduir-ne la càrrega. 
+=======
+Objects are "heavier" than primitives. They require additional resources to support the internal machinery.
+>>>>>>> 18b1314af4e0ead5a2b10bb4bacd24cecbb3f18e
 
 
 
+<<<<<<< HEAD
 ## Primitius com a objectes
+=======
+- There are many things one would want to do with a primitive, like a string or a number. It would be great to access them using methods.
+- Primitives must be as fast and lightweight as possible.
+>>>>>>> 18b1314af4e0ead5a2b10bb4bacd24cecbb3f18e
 
 Heus ací la paradoxa a la qual va fer front el creador de Javascript:
 
 - Hi ha moltes coses que hom voldria fer amb una primitiu (com una cadena de caràcters o un nombre). Seria genial accedir-hi a través de mètodes. 
 - Els primitius han de ser tan ràpids i lleugers com siga possible.
 
+<<<<<<< HEAD
 La solució sembla una mica estranya, però: 
 
 - Els primitius són encara primitius. Un valor únic, com voliem. 
 - El llenguatge permet accedir mètodes i propietats de cadenes de caràcters, nombres, booleans i símbols. 
 - Per a que això funcione, es crea un "objecte embolcall" que aporta funcionalitats extra, i després es destrueix. 
+=======
+The "object wrappers" are different for each primitive type and are called: `String`, `Number`, `Boolean`, `Symbol` and `BigInt`. Thus, they provide different sets of methods.
+
+For instance, there exists a string method [str.toUpperCase()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) that returns a capitalized `str`.
+>>>>>>> 18b1314af4e0ead5a2b10bb4bacd24cecbb3f18e
 
 Els "objectes embolcall" són diferents per a cada tipus primitiu i s'anomenen: `String`, `Number`, `Boolean` i `Symbol`. Així, aporten diferents mètodes. 
 
@@ -84,8 +108,13 @@ alert( n.toFixed(2) ); // 1.23
 
 Veurem mètodes més específics als capítols <info:number> and <info:string>.
 
+<<<<<<< HEAD
 ````warn header="Els constructors String/Number/Boolean`són només per a ús intern"
 Algunes llenguatges com Java ens permeten crear "objectes embolcall" per a primitius explicitament amb sintaxi de l'estil`new Number(1)` o `new Boolean(false)`.
+=======
+````warn header="Constructors `String/Number/Boolean` are for internal use only"
+Some languages like Java allow us to explicitly create "wrapper objects" for primitives using a syntax like `new Number(1)` or `new Boolean(false)`.
+>>>>>>> 18b1314af4e0ead5a2b10bb4bacd24cecbb3f18e
 
 En Javascript, això també és possible per raons històriques, però **no és recomanable**. Les coses poden tornar-se imprevisibles.
 
@@ -107,10 +136,17 @@ if (zero) { // zero is true, because it's an object
 }
 ```
 
+<<<<<<< HEAD
 Alternativament, emprar les mateixes funcions `String/Number/Boolean` sense `new` és totalment útil i assenyat. Converteixen el valor primitiu corresponent: cadena de caràcters, nombre o booleà.
 
 Per exemple, això és perfectament vàlid: 
 
+=======
+On the other hand, using the same functions `String/Number/Boolean` without `new` is totally fine and useful thing. They convert a value to the corresponding type: to a string, a number, or a boolean (primitive).
+
+For example, this is entirely valid:
+
+>>>>>>> 18b1314af4e0ead5a2b10bb4bacd24cecbb3f18e
 ```js
 let num = Number("123"); // converteix 'string' a 'number'
 ```
