@@ -1,4 +1,4 @@
-# Conditional operators: if, '?'
+# Conditional branching: if, '?'
 
 Sometimes, we need to perform different actions based on different conditions.
 
@@ -6,7 +6,7 @@ To do that, we can use the `if` statement and the conditional operator `?`, that
 
 ## The "if" statement
 
-The `if` statement evaluates a condition and, if the condition's result is `true`, executes a block of code.
+The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
 
 For example:
 
@@ -68,7 +68,7 @@ if (cond) {
 
 ## The "else" clause
 
-The `if` statement may contain an optional "else" block. It executes when the condition is false.
+The `if` statement may contain an optional "else" block. It executes when the condition is falsy.
 
 For example:
 ```js run
@@ -181,9 +181,9 @@ alert( message );
 It may be difficult at first to grasp what's going on. But after a closer look, we can see that it's just an ordinary sequence of tests:
 
 1. The first question mark checks whether `age < 3`.
-2. If true -- it returns `'Hi, baby!'`. Otherwise, it continues to the expression after the colon '":"', checking `age < 18`.
-3. If that's true -- it returns `'Hello!'`. Otherwise, it continues to the expression after the next colon '":"', checking `age < 100`.
-4. If that's true -- it returns `'Greetings!'`. Otherwise, it continues to the expression after the last colon '":"', returning `'What an unusual age!'`.
+2. If true -- it returns `'Hi, baby!'`. Otherwise, it continues to the expression after the colon ":", checking `age < 18`.
+3. If that's true -- it returns `'Hello!'`. Otherwise, it continues to the expression after the next colon ":", checking `age < 100`.
+4. If that's true -- it returns `'Greetings!'`. Otherwise, it continues to the expression after the last colon ":", returning `'What an unusual age!'`.
 
 Here's how this looks using `if..else`:
 
@@ -216,7 +216,7 @@ Depending on the condition `company == 'Netscape'`, either the first or the seco
 
 We don't assign a result to a variable here. Instead, we execute different code depending on the condition.
 
-**We don't recommend using the question mark operator in this way.**
+**It's not recommended to use the question mark operator in this way.**
 
 The notation is shorter than the equivalent `if` statement, which appeals to some programmers. But it is less readable.
 
