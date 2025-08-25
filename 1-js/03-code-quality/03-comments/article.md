@@ -4,7 +4,11 @@ Com sabem pel capítol <info:structure>, els comentaris poden ser d'una única lín
 
 Normalment els utilitzem per descriure com i perquè funciona el codi.
 
+<<<<<<< HEAD
 A primera vista, comentar pot semblar obvi, però els novells de la programació acostumen a equivocar-se.
+=======
+At first sight, commenting might be obvious, but novices in programming often use them wrongly.
+>>>>>>> 540d753e90789205fc6e75c502f68382c87dea9b
 
 ## Comentaris dolents
 
@@ -18,7 +22,11 @@ complex;
 code;
 ```
 
+<<<<<<< HEAD
 Però en bon codi, la quantitat de comentaris "explicatius" hauria de ser mínima. De debò, el codi hauria de ser fàcil d'entendre sense comentaris.
+=======
+But in good code, the amount of such "explanatory" comments should be minimal. Seriously, the code should be easy to understand without them.
+>>>>>>> 540d753e90789205fc6e75c502f68382c87dea9b
 
 Existeix una gran norma sobre això: "si el codi és tan poc clar que necessita un comentari, llavors potser hauria de ser reescrit en comptes".
 
@@ -118,6 +126,7 @@ En realitat, podem evitar totalment els comentaris "explicatius". Existeixen alg
 
 Per tant, els comentaris explicatius solen ser dolents. Quins comentaris són bons?
 
+<<<<<<< HEAD
 Descriuen l'arquitectura:
 : Proporcionen una visió general d'alt nivell dels components, com interactuen, quin és el flux de control en diferents situacions... En resum -- una vista d'ocell del codi. Hi ha un llenguatge de diagrames especial [UML](https://ca.wikipedia.org/wiki/Llenguatge_de_modelitzaci%C3%B3_unificat) per a diagrames d'arquitectura d'alt nivell. Sens dubte val la pena estudiar.
 
@@ -162,6 +171,33 @@ Hi ha algunes característiques subtils del codi? A on són utilitzades?
 ## Resum
 
 Un signe important d'un bon desenvolupador són els comentaris: la seva presència i fins i tot la seva absència.
+=======
+Describe the architecture
+: Provide a high-level overview of components, how they interact, what's the control flow in various situations... In short -- the bird's eye view of the code. There's a special language [UML](http://wikipedia.org/wiki/Unified_Modeling_Language) to build high-level architecture diagrams explaining the code. Definitely worth studying.
+
+Document function parameters and usage
+: There's a special syntax [JSDoc](http://en.wikipedia.org/wiki/JSDoc) to document a function: usage, parameters, returned value.
+
+For instance:
+```js
+/**
+ * Returns x raised to the n-th power.
+ *
+ * @param {number} x The number to raise.
+ * @param {number} n The power, must be a natural number.
+ * @return {number} x raised to the n-th power.
+ */
+function pow(x, n) {
+  ...
+}
+```
+
+Such comments allow us to understand the purpose of the function and use it the right way without looking in its code.
+
+By the way, many editors like [WebStorm](https://www.jetbrains.com/webstorm/) can understand them as well and use them to provide autocomplete and some automatic code-checking.
+
+Also, there are tools like [JSDoc 3](https://github.com/jsdoc/jsdoc) that can generate HTML-documentation from the comments. You can read more information about JSDoc at <https://jsdoc.app>.
+>>>>>>> 540d753e90789205fc6e75c502f68382c87dea9b
 
 Bons comentaris ens ajuden a mantenir el codi de manera correcta, tornar després d'un temps i utilitzar-lo de manera eficient.
 
@@ -176,4 +212,25 @@ Bons comentaris ens ajuden a mantenir el codi de manera correcta, tornar després
 - Que ens expliquen "com funciona el codi" i "que és el que fa".
 - Escriu-los només si és impossible fer que el codi sigui simple i auto descriptiu fins al punt que no els necessiti.
 
+<<<<<<< HEAD
 Els comentaris també són utilitzats per eines de documentació automàtica com JSDoc3: els llegeixen i generen documents en HTML (o documents en altres formats).
+=======
+## Summary
+
+An important sign of a good developer is comments: their presence and even their absence.
+
+Good comments allow us to maintain the code well, come back to it after a delay and use it more effectively.
+
+**Comment this:**
+
+- Overall architecture, high-level view.
+- Function usage.
+- Important solutions, especially when not immediately obvious.
+
+**Avoid comments:**
+
+- That tell "how code works" and "what it does".
+- Put them in only if it's impossible to make the code so simple and self-descriptive that it doesn't require them.
+
+Comments are also used for auto-documenting tools like JSDoc3: they read them and generate HTML-docs (or docs in another format).
+>>>>>>> 540d753e90789205fc6e75c502f68382c87dea9b
